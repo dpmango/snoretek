@@ -12,9 +12,10 @@ $hd: width <= 1680px
 $hd-from: width >= 1680px
 
 // variables
-$fontColor: #333
+$fontColor: #40454C
 $fontColorMuted: #A4A9AA
 $borderColor: #DDE4E4
+$lightColor: #F8F8F8
 
 $colorBlue: #2980b9
 $colorBlueLight: #3498db
@@ -59,6 +60,7 @@ body, html
   display: flex
   flex-direction: column
   min-height: 100vh
+  padding-top: 60px
   transition: transform .4s ease
   &__content
     flex-grow: 1
@@ -156,24 +158,10 @@ body, html
     flex-basis: 75%
   &--auto
     flex: 1 1 auto
-  &--65-100
-    flex-basis: 62%
-  &--35-100
-    flex-basis: 38%
-  &--pad-r-9
-    padding-right: 9%
 
   @media($desktop)
     &--full--desktop
       flex-basis: 100%
-    &--310--desktop
-      flex-basis: 310px
-    &--360--desktop
-      flex-basis: 360px
-    &--450--desktop
-      flex-basis: 450px
-    &--640--desktop
-      flex-basis: 640px
     &--auto--desktop
       flex-basis: auto
     &--grow--desktop
@@ -183,13 +171,9 @@ body, html
       margin-right: auto
 
   @media($tablet)
-    &--pad-r-9
-      padding-right: 3%
-
-
-  @media(width <= 785px)
-    &--360--desktop
-      flex-basis: 340px
+    &--auto-m--tablet
+      margin-left: auto
+      margin-right: auto
 
   @media($mobile)
     &--360--desktop

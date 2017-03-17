@@ -1,9 +1,22 @@
 // HEADER
-
 .header
   background: $colorBlue
   height: 60px
   color: white
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 10
+  transform: translate3d(0,0,0)
+  transition: transform .3s ease-out
+  &--transformed
+    transform: translate3d(0,-100%,0)
+  &--sticky
+    position: fixed
+    transform: translate3d(0,0,0)
+    box-shadow: 0 2px 6px color(black a(30%))
+
   .row
     height: 60px
   &__logo
@@ -31,7 +44,6 @@
       margin-left: 10px
   .hamburger
     display: none
-
 
 @media($tablet)
   .header
@@ -73,7 +85,6 @@
       margin-bottom: 20px
       filter: brightness(100)
 
-
 // SHOP
 .shop
   padding-top: 35px
@@ -86,7 +97,7 @@
     &__tabs-nav
       display: flex
       justify-content: space-between
-      border-bottom: 2px solid $borderColor
+      border-bottom: 3px solid $borderColor
       padding-bottom: 10px
       &__tab
         position: relative
@@ -95,18 +106,19 @@
           display: block
           content: ' '
           position: absolute
-          bottom: -12px
+          bottom: -13px
           left: 0
           width: 100%
-          height: 2px
+          height: 3px
           background: transparent
+          transition: all .3s ease
         a
           display: block
           position: relative
           overflow: hidden
           padding: 15px 10px
           font-size: 15px
-          background: #f8f8f8
+          background: $lightColor
           border-radius: 8px
           text-align: center
           font-family: 'Montserrat'
@@ -118,15 +130,7 @@
             position: absolute 0 0 0 0
             z-index: 2
             background: color(black a(40%))
-
-        &.active
-          &::after
-            background: $colorBlueLight
-          a
-            background: $colorBlueLight
-            &::before
-              background: color($colorBlueLight a(50%))
-
+            transition: all .3s ease
         img
           position: absolute
           left: 0
@@ -138,6 +142,13 @@
           display: block
           position: relative
           z-index: 3
+        &.active
+          &::after
+            background: $colorBlueLight
+          a
+            background: $colorBlueLight
+            &::before
+              background: color($colorBlueLight a(50%))
 
     &__tabs-content
       margin-top: 25px
@@ -147,9 +158,12 @@
         display: block
 
     &__image
-      background: #f8f8f8
+      background: $lightColor
       padding: 10px
       border-radius: 6px
+      display: inline-block
+      margin-left: auto
+      margin-right: auto
       img
         max-width: 100%
     &__title
@@ -158,15 +172,17 @@
       font-family: 'Montserrat'
 
   &__form
-    background: #f4f4f4
+    background: #F3F3F3
     border: 2px solid $borderColor
     border-radius: 6px
-    margin-left: 15%
+    margin-left: auto
+    width: 400px
     padding: 25px 30px
     &__title
       font-family: 'Montserrat'
       font-size: 18px
       font-weight: 700
+      text-transform: uppercase
       margin-bottom: 15px
       span
         font-weight: 700
@@ -181,6 +197,18 @@
       text-align: center
       margin-top: 20px
 
+
+@media($desktop)
+  .shop
+    &__form
+      margin-left: auto
+
+@media($tablet)
+  .shop
+    &__form
+      margin-top: 30px
+      margin-left: auto
+      margin-right: auto
 
 .section-title
   font-size: 32px
@@ -202,8 +230,8 @@
 
 
 // BENEFITS
-.benefits
-  background: #f8f8f8
+.features
+  background: $lightColor
   margin-top: 80px
   padding-top: 50px
   padding-bottom: 50px
@@ -282,30 +310,250 @@
 
 
 // TESTIMONAILS
-
 .testimonials
-  background: #f8f8f8
+  background: $lightColor
   margin-top: 80px
   padding-top: 50px
   padding-bottom: 50px
+  .col--full
+    width: 100%
   .owl-carousel
-    overflow: hidden
+    margin-top: 30px
   &__card
     display: flex
+    margin-left: 3%
+    margin-right: 3%
     &__image
       flex: 0 0 100px
       size: 100px
       margin-right: 20px
       border-radius: 50%
+      position: relative
       overflow: hidden
       img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
         max-width: 100%
     &__content
       flex: 1 1 auto
     &__name
       font-family: 'Montserrat'
       font-weight: 700
+      font-size: 20px
+      color: $colorBlue
     &__text
       font-size: 17px
 
       margin-top: 20px
+
+.owl-next, .owl-prev
+  font-size: 0
+
+.owl-nav
+  position: absolute
+  top: -110px
+  right: 0
+
+.owl-prev, .owl-next
+  display: inline-block
+  content: ' '
+  background-image: svg-load('../../images/svg/ico-arrow.svg', fill=$fontColorMuted)
+  size: 35px
+  cursor: pointer
+  &:hover
+    background-image: svg-load('../../images/svg/ico-arrow.svg', fill=$colorBlue)
+.owl-prev
+  margin-right: 10px
+  transform: rotate(180deg)
+
+.owl-dots
+  display: flex
+  align-items: center
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 3
+  bottom: -20px
+
+  .owl-dot
+    content: ' '
+    background: $borderColor
+    size: 8px
+    border-radius: 50%
+    margin-right: 10px
+    transition: all .25s ease-in-out
+    &:last-child
+      margin-right: 0
+    &.active
+      size: 14px
+      background: $colorBlue
+
+
+// ABOUT
+.about
+  margin-top: 80px
+  &__text
+    margin-top: 20px
+    text-align: center
+    h3
+      font-size: 20px
+
+// FAQ
+.faq
+  background: $lightColor
+  margin-top: 80px
+  padding-top: 50px
+  padding-bottom: 80px
+  &__wrapper
+    display: flex
+    align-items: flex-start
+    margin-top: 30px
+
+  &__question-box
+    border: 2px solid $borderColor
+    flex: 0 0 80px
+    size: 80px
+    font-size: 70px
+    line-height: 1
+    font-family: 'Montserrat'
+    text-align: center
+    color: $fontColorMuted
+
+  &__list
+    flex: 1 1 auto
+    margin-left: 40px
+
+  &__item
+    margin-bottom: 20px
+    border-radius: 6px
+    border: 1px solid $borderColor
+    background: white
+    &.active
+      .faq__item__title
+        &::before
+          transform: rotate(180deg)
+      .faq__item__answer
+        display: block
+    &__title
+      font-family: 'Montserrat'
+      font-size: 18px
+      font-weight: 700
+      position: relative
+      cursor: pointer
+      padding: 14px 20px
+      transition: all .3s ease
+      &::before
+        display: inline-block
+        content: ' '
+        background: svg-load('../../images/svg/triangle.svg', fill=$fontColorMuted) no-repeat center
+        size: 10px
+        margin-right: 10px
+        vertical-align: middle
+        background-size: contain
+        transform: rotate(90deg)
+        transition: all .3s ease
+
+      &:hover
+        background: color($borderColor a(50%))
+
+    &__answer
+      display: none
+      border-top: 1px solid $borderColor
+      padding: 14px 20px
+      p
+        margin: 0
+
+  &__help
+    margin-left: 40px
+    flex: 0 0 200px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: $colorYellow
+    border-radius: 6px
+    padding: 30px 20px
+    text-align: center
+    color: white
+    &__title
+      font-size: 20px
+      font-family: 'Montserrat'
+      font-weight: 700
+      text-transform: uppercase
+
+    &__subtitle
+      font-size: 18px
+      margin-top: 20px
+      margin-bottom: 20px
+
+@media($tablet)
+  .faq
+    &__wrapper
+      flex-direction: column
+      margin-top: 20px
+    &__question-box
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 20px
+    &__list
+      margin-left: 0
+    &__help
+      margin-left: auto
+      margin-right: auto
+
+// CTA
+.cta
+  background: $colorBlue
+  color: white
+  padding-top: 50px
+  padding-bottom: 50px
+  .row
+    margin-left: auto
+    margin-right: auto
+    max-width: 700px
+
+  &__title
+    font-size: 28px
+    letter-spacing: 1px
+    font-family: 'Montserrat'
+    font-weight: 700
+    margin-bottom: 15px
+  &__subtitle
+    font-size: 17px
+
+@media($tablet)
+  .cta
+    &__subtitle
+      margin-bottom: 40px
+
+// FOOTER
+.footer
+  background: #F1F7F7
+  padding: 40px 0 30px 0
+  &__text
+    color: $fontColorMuted
+    width: 50%
+    margin-bottom: 10px
+  &__copywrite
+    font-size: 14px
+    a
+      display: inline-block
+      margin-left: 10px
+      text-decoration: underline
+  &__socials
+    display: flex
+    justify-content: flex-end
+    a
+      flex: 0 0 38px
+      display: flex
+      justify-content: center
+      align-items: center
+      background: $borderColor
+
+      size: 38px
+      border-radius: 4px
+      margin-right: 10px
+      &:last-child
+        margin-right: 0

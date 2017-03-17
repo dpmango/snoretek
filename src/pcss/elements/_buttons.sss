@@ -5,6 +5,7 @@
   box-shadow: none
   cursor: pointer
   font-family: 'Montserrat', sans-serif
+  border-radius: 6px
   transition: all .4s ease-in-out
   &:focus, &:active
     outline: none
@@ -12,7 +13,6 @@
   &--primary
     padding: 8px 20px
     background: $colorYellow
-    border-radius: 6px
     color: white
     border: 0
     &:hover
@@ -24,7 +24,6 @@
     font-size: 17px
     font-weight: 700
     background: $colorGreen
-    border-radius: 6px
     color: white
     border: 0
     span span
@@ -32,3 +31,17 @@
     &:hover
       background: color($colorGreen a(90%))
       color: white
+  &--outline
+    background: transparent
+    color: white
+    border: 1px solid white
+    padding: 12px 20px
+    font-size: 15px
+    font-weight: 700
+    &:hover
+      background: white
+      color: $fontColor
+      border-color: white
+  &--huge
+    font-size: 22px
+    padding: 15px 40px

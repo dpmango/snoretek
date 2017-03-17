@@ -36,4 +36,4 @@ __Production__
 
 
 ## Push command
-gulp build && git add . && git commit -m "more sections" && git push origin master && git subtree push --prefix dist origin gh-pages
+gulp build && git add . && git commit -m "finished markup" && git push origin master && git subtree push --prefix dist origin gh-pages

@@ -1,6 +1,32 @@
+// set dalay on scroll event to prevent memory leaks
+(function($) {
+  var uniqueCntr = 0;
+  $.fn.scrolled = function (waitTime, fn) {
+    if (typeof waitTime === "function") {
+        fn = waitTime;
+        waitTime = 50;
+    }
+    var tag = "scrollTimer" + uniqueCntr++;
+    this.scroll(function () {
+        var self = $(this);
+        var timer = self.data(tag);
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function () {
+            self.removeData(tag);
+            fn.call(self[0]);
+        }, waitTime);
+        self.data(tag, timer);
+    });
+  }
+})(jQuery);
+
+
+// READY FUNCTION
 $(document).ready(function(){
 
- 	// Prevent # errors
+ 	// Prevent # behavior
 	$('[href="#"]').click(function (e) {
 		e.preventDefault();
 	});
@@ -9,9 +35,27 @@ $(document).ready(function(){
 	$('a[href^="#section"]').click(function(){
         var el = $(this).attr('href');
         $('body, html').animate({
-            scrollTop: $(el).offset().top}, 1000);
+            scrollTop: $(el).offset().top - 80}, 800);
         return false;
 	});
+
+  // FIXED HEADER
+  $(window).scroll(function(){
+    var wPos = $(window).scrollTop();
+    var shopHeight = $('.shop').height() + 20;
+
+    if (wPos > 200 ) {
+      $('.header').addClass('header--transformed');
+    } else {
+      $('.header').removeClass('header--transformed');
+    }
+
+    if (wPos > shopHeight ) {
+      $('.header').addClass('header--sticky');
+    } else {
+      $('.header').removeClass('header--sticky');
+    }
+  });
 
   // hamburger
   $('.hamburger').on('click', function(){
@@ -40,7 +84,6 @@ $(document).ready(function(){
 
     var selectedTab = $(this).data('product');
 
-
     $('.shop__product__tab').each(function(i, val){
       if (selectedTab == $(this).data('product')){
         $(this).siblings().removeClass('active');
@@ -50,8 +93,13 @@ $(document).ready(function(){
   });
 
 
-  // UI
+  // FAQ SECTION
+  $('.faq__item__title').on('click', function(e){
+    $(this).parent().find('.faq__item__answer').slideToggle();
+    $(this).parent().toggleClass('active');
+  });
 
+  // UI
   $('.ui-select').on('click', function(e){
     $(this).toggleClass('active');
   });
@@ -76,11 +124,11 @@ $(document).ready(function(){
     });
   });
 
-
   // Carousel
   $('#owlTestimonials').owlCarousel({
     loop: true,
     nav: true,
+    dots: true,
     margin: 0,
     responsive: {
       0:{

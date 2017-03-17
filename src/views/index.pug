@@ -5,11 +5,11 @@ html
   body
     .mobile-menu
       .mobile-menu__menu
-        a(href="#section") How it works
-        a(href="#section") Features
-        a(href="#section") Testimonials
-        a(href="#section") About
-        a(href="#section") FAQ
+        a(href="#sectionFeatures") Features
+        a(href="#sectionHowItWorks") How it works
+        a(href="#sectionTestimonials") Testimonials
+        a(href="#sectionAbout") About
+        a(href="#sectionFaq") FAQ
         
     .page
       // HEADER
@@ -19,11 +19,11 @@ html
             .header__logo
               img(src='images/logo-white.png')
             .header__menu
-              a(href="#section") How it works
-              a(href="#section") Features
-              a(href="#section") Testimonials
-              a(href="#section") About
-              a(href="#section") FAQ
+              a(href="#sectionFeatures") Features
+              a(href="#sectionHowItWorks") How it works
+              a(href="#sectionTestimonials") Testimonials
+              a(href="#sectionAbout") About
+              a(href="#sectionFaq") FAQ
               a(href='#sectionShop').btn.btn--primary Buy Now
             button.hamburger.hamburger--spin(type='button')
               span.hamburger-box
@@ -35,8 +35,8 @@ html
         // SHOP
         .shop#sectionShop
           .container
-            .row
-              .col.col--3-6
+            .row.row--column--tablet
+              .col.col--3-6.col--auto--desktop
                 // LEFT SECTION (PRODUCTS)
                 .shop__title The Best Snoring Solution
                 .shop__product
@@ -71,7 +71,7 @@ html
                     // next prodcut
                     .shop__product__tab.active(data-product='3')  
   
-              .col.col--3-6
+              .col.col--3-6.col--auto--desktop.col--auto-m--tablet
                 form(action="#").shop__form
                   .shop__form__title <span> $ 9.95 </span> Try it today
                   .shop__form__section
@@ -155,40 +155,40 @@ html
                     button(type="submit").btn.btn--cta
                       span Pay <span>$9.95</span>
                     
-        // BENEFITS
-        .benefits
+        // FEATURES
+        .features#sectionFeatures
           .container
             .row
               .col.col--full
                 .section-title SnoreTek Features 
-            .row
+            .row.row--alignCenter.row--column--tablet
               .col.col--4-6
-                .benefits__list
-                  .benefits__block
-                    .benefits__block__icon
+                .features__list
+                  .features__block
+                    .features__block__icon
                       i.ico.ico-benefit-1
-                    .benefits__block__content
-                      .benefits__title Helps Open Mouth Snoring & Dry Mouth
-                    .benefits__description This is a simple effective solution for open mouth snoring and problems with dry mouth sleeping. You will be comfortable while wearing the safe noninvasive SnoreTek. 
-                  .benefits__block
-                    .benefits__block__icon
+                    .features__block__content
+                      .features__title Helps Open Mouth Snoring & Dry Mouth
+                    .features__description This is a simple effective solution for open mouth snoring and problems with dry mouth sleeping. You will be comfortable while wearing the safe noninvasive SnoreTek. 
+                  .features__block
+                    .features__block__icon
                       i.ico.ico-benefit-2
-                    .benefits__block__content
-                      .benefits__title Prevents CPAP Bloating and Dry Mouth
-                    .benefits__description The SnoreTek by keeping the mouth closed, offers CPAP users a solution to the common stomach bloating problem caused from air being blown into the open mouth. 
-                  .benefits__block
-                    .benefits__block__icon
+                    .features__block__content
+                      .features__title Prevents CPAP Bloating and Dry Mouth
+                    .features__description The SnoreTek by keeping the mouth closed, offers CPAP users a solution to the common stomach bloating problem caused from air being blown into the open mouth. 
+                  .features__block
+                    .features__block__icon
                       i.ico.ico-benefit-3
-                    .benefits__block__content
-                      .benefits__title Improves Snoring Mouthpiece Effectiveness
-                    .benefits__description Snoring mouthpieces commonly fall out making them less effective. When worn while sleeping, the SnoreTek can prevent the mouthpiece from falling out and this helps stop snoring.
+                    .features__block__content
+                      .features__title Improves Snoring Mouthpiece Effectiveness
+                    .features__description Snoring mouthpieces commonly fall out making them less effective. When worn while sleeping, the SnoreTek can prevent the mouthpiece from falling out and this helps stop snoring.
               
               .col.col--2-6
-                .benefits__image
+                .features__image
                   img(src='http://placehold.it/300x450')
 
         // HOW IT WORKS
-        .how-it-works
+        .how-it-works#sectionHowItWorks
           .container
             .row
               .col.col--full
@@ -217,11 +217,12 @@ html
                     span hold your mouth closed to stop snoring
     
         // TESTIMONAILS
-        .testimonials
+        .testimonials#sectionTestimonials
           .container
             .row
               .col.col--full
                 .section-title Testimonials
+                    
             .row
               .col.col--full
                 .owl-carousel#owlTestimonials
@@ -261,5 +262,201 @@ html
                         .testimonials__card__name Bill Gates
                         .testimonials__card__text 
                           p My wife says it works great. Comfortable to wear. Tried other devices and they did not work. This one really works.
-                                                                        
+        
+        // About
+        .about#sectionAbout
+          .container
+            .row
+              .col.col--full
+                .section-title About
+            .row
+              .col.col--full
+                .about__text
+                  p Both of these products can help your snoring and sleep problems. Try them to see which offers you the best solution. You can use them in combination for maximum benefit.
+
+                  h3 SnoreTek
+                  p The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and prevents it from dropping back over the airway during sleep, which is the cause of snoring. This is a simple effective solution for open mouth snoring and problems with dry mouth sleeping. 
+                  p The SnoreTek by holding the mouth closed, offers CPAP users a solution to the common stomach bloating problem caused from air being blown into the open mouth, aerophagia. 
+                  p If you snoring mouthpiece falls out while sleeping, the SnoreTek chin strap can help keep the mouthpiece in place. You must be able to breathe freely through your nose for these applications to have benefit with the SnoreTek Band.
+                      
+          // FAQ
+          .faq#sectionFaq
+            .container
+              .row
+                .col.col--full
+                  .section-title Frequently asked questions     
+              .faq__wrapper
+                .faq__question-box ?
+                .faq__list
+                  .faq__item.active
+                    .faq__item__title HOW TO FIT the SnoreTek Chin Strap 
+                    .faq__item__answer
+                      p Position the Chin Support Strap as shown above, under the chin and place the cutouts around the ears. Then fasten the adjustable Velcro straps in the most comfortable and effective position. 
+                  .faq__item
+                    .faq__item__title How do I know that the QNZ will work for me?
+                    .faq__item__answer
+                      p Scientific studies validate the concept
+                      p The QNZ mouthpiece concept has been validated with numerous medical and scientific studies. The AASM & ADSM recommend a snoring mouthpiece as the first treatment option to treat simple snoring and mild to moderate obstructive sleep apnea. Please read this article for more information: http://mouthguardstore.com/articles/medical-experts-recommend-the-snoring-mouthpiece-for-sleep-apnea-and-snoring 
+                      p Although it has been scientifically proven to help treat snoring and sleep apnea, it may not work for 100% of the people. Our satisfaction rate with the product is better than 90%.       
+                  .faq__item
+                    .faq__item__title How does the QNZ work?
+                    .faq__item__answer
+                      p The QNZ holds your jaw forward during sleep to open the airway and stop snoring.
+                      p The most common cause of snoring is air being passed through a partially constricted airway causing vibration of the palate during breathing. The QNZ mouthpiece works by moving the jaw forward, which opens up the airway and stretches the palate so it does not vibrate (or vibrates less). 
+                  .faq__item
+                    .faq__item__title Is there a simple test to try before I buy the QNZ?
+                    .faq__item__answer
+                      p <b>Yes. You can</b>
+                      p try this. Close your mouth with your teeth together. Then try to make a snoring sound. 
+                      p Then open your mouth a little and move your jaw forward a little at a time and try to make the snoring stop. You will see that the snoring stops or improves. This opening and jaw forward movement is how the mouthpiece stops your snoring.
+                      p The mouthpiece holds the jaw in that location while you sleep.
+                  .faq__item
+                    .faq__item__title Is there a warranty?
+                    .faq__item__answer
+                      p <b>Yes.</b>
+                      p You have 30 days from your purchase date to verify your satisfaction with the QNZ for a full refund. Please see the return detail at the end of the FAQ section
+                  .faq__item
+                    .faq__item__title How soon will I stop snoring?
+                    .faq__item__answer
+                      p <b>The first night</b>
+                      p For most people you will know the first night, if your snoring stops. If it stops your snoring for even a short while, then you know that moving your jaw forward and holding it there will work for you. Purchasing the QNZ is an economical option to determine if a snoring mouthpiece can help stop your snoring.
+                      p Following the good sleep hygiene tips http://mouthguardstore.com/articles/how-to-stop-snoring-remedies found in the article section at the mouthguardstore.com website will assure you the best chance to stop snoring.
+                      p If you do not see improvement right away, try tweaking the QNZ with the steps described below.
+                  .faq__item
+                    .faq__item__title How long will the QNZ last?
+                    .faq__item__answer
+                      p Six months to two years.
+                      p There are many factors that can affect the life expectancy of your QNZ. Grinding your teeth while you sleep, how clean you keep it and how you store it will all play a part.
+                      p Some people regularly purchase every six months and others who come back once every two years.
+                  .faq__item
+                    .faq__item__title The QNZ works but can I get a better mouthpiece?
+                    .faq__item__answer
+                      p <b>Yes.</b>
+                      p It is important to confirm that a snoring mouthpiece can help treat your snoring. The QNZ is a very good first treatment option due to its modest cost and easy fitting process.
+                      p While many clients replace their QNZ with another one as they periodically wear, others upgrade to a thinner, better fitting and more durable laboratory custom fit appliance called the QuietNite Z Elite. These are available at the mouthguardstore.com website.
+                  .faq__item
+                    .faq__item__title Will I be able to breathe through my mouth with the QNZ?
+                    .faq__item__answer
+                      p <b>Yes.</b>
+                      p The QNZ has been engineered with large breathing holes to allow you to breathe easily.
+                      p It is normal for one side of the nose to be temporarily blocked when you first lie down so the breathing holes are helpful. Most people you will revert to nasal breathing within 15 minutes.
+                  .faq__item
+                    .faq__item__title What do I do if my snoring does not stop? 
+                    .faq__item__answer
+                      p Refit “Tweak” the mouthpiece 
+                      p Most people can see an improvement in their snoring by tweaking the QNZ mouthpiece. Try these steps first to get improvement before returning the mouthpiece.
+                      p People are understandably disappointed if they find their QNZ does not work right away, but are then pleasantly surprised to find that with a bit of “tweaking” they stop snoring
+
+                  //- How can I adjust or tweak the QNZ?
+                  //- Situation: It does not work at all
+                  //- This is usually caused from the jaw not being held forward enough.
+                  //- Solution:
+                  //- Refit the mouthpiece according to the initial instructions and move the jaw farther toward the front. You only want to do this as far as necessary to prevent jaw soreness.
+                  //- Sometimes the mouthpiece can be adjusted a little at a time as the body adjusts to the new location. 
+                  //- 
+                  //- Situation: It only works at the start of the night, or falls out during the night
+                  //- This is usually caused by the fit not begin tight enough to hold the jaw in its proper location throughout the night.
+                  //- Solutions:
+                  //- Refit the mouthpiece and concentrate on compression of the softened material toward the gums and teeth.
+                  //- Suck out all the saliva when the device is first inserted at night.
+                  //- Some users have reported that application of denture adhesive keeps the mouthpiece in place enough to stop the snoring. 
+                  //- If the snoring does stop but does not stay in long enough, then investing in a custom mouthpiece such as the QuietNite Z Elite or a custom device from dentist may be a better solution.
+                  //- 
+                  //- Situation: It used to work, but now I’m snoring again
+                  //- Some people clench their teeth during the night. This tends to stretch the mouthpiece making it loose.
+                  //- Solution:
+                  //- First try to remold the mouthpiece or buy another QNZ if this fails or upgrade to a custom QNZ Elite.
+                  //- The QNZ was designed to be sturdy enough to resist some clenching
+                  //- 
+                  //- Situation: My jaw muscles ache in the morning
+                  //- It is common during the adjustment period to experience some jaw discomfort as the body adjusts to the stretching of the jaw ligaments. This in most cases resolves within a week or so.
+                  //- Solution: 
+                  //- If the problem persists, your jaw may be pushed too far forward. Then you can remold the mouthpiece with your jaw not so far forward. 
+                  //- 
+                  //- Situation: My front teeth hurt when I wake in the morning
+                  //- This is a common situation caused by your front teeth holding the jaw forward during the night. For most people this disappears in a couple of weeks.
+                  //- Solution: 
+                  //- Remolding the mouthpiece with the jaw pushed out less forward may solve the problem. 
+                  //- Make sure that the edges do not flop over during the softening of the mouthpiece in the hot water as this can place too much material on the front teeth. 
+                  //- The custom QNZ Elite distributes the force more evenly and can be a better option if your see stop snoring success with the regular QNZ.
+                  //- 
+                  //- How many times can I re mold the QNZ?
+                  //- Two to five times
+                  //- Usually you can refit the device 4-5 times. The material begins to stiffen after that and be less pliable.
+                  //- 
+                  //- How long does it take to get used to it?
+                  //- Usually overnight
+                  //- The adjustment phase obviously varies from person to person. Usually within a week or two most of the side effects have diminished or disappeared. 
+                  //- 
+                  //- How do I clean it?
+                  //- Use a soft tooth brush with liquid soap.
+                  //- All QNZ products are cleaned in a similar fashion. First use a soft toothbrush with liquid soap to remove any debris. Tooth pastes often contain abrasives which can damage the QNZ surface over time causing it to be more susceptible to staining.
+                  //- Soaking the appliance in a denture cleaner such as the Oxygone cleaner available from the MGS will gently clean the mouthpiece and give it a fresh minty taste. 
+                  //- 
+                  //- 
+                  //- Will the mouthpiece make me gag?
+                  //- Rarely
+                  //- Customers rarely mention gagging. If you have a problem with that, fit the mouthpiece and gradually wear it for a few minutes at a time till the body adjusts to having something in place.
+                  //- 
+                  //- Why do I have so much saliva?
+                  //- Saliva accumulation will decrease
+                  //- The body initially interprets the mouthpiece as a food type material which requires saliva. This is very common and dissipates over time
+                  //- 
+                  //- Can it help me if I have sleep Apnea?
+                  //- Yes
+                  //- Almost everyone with Obstructive Sleep Apnea snores. A mouthpiece which helps stop snoring will also likely improve OSA.
+                  //- However, since this is a dangerous medical condition associated with heart disease and other problems, you should be monitored by a sleep physician if you have sleep apnea. 
+                  //- The QNZ and other mouthpieces can be prescribed by a physician or dentist trained in sleep breathing disorders. 
+                  //- 
+                  //- Can I use the QNZ if I wear dentures?
+                  //- Yes.
+                  //- If you have partial dentures and some front teeth in both upper and lower jaws, the QNZ may work. 
+                  //- No.
+                  //- If you wear a full denture in either jaw
+                  //- If you wear full dentures the QNZ will not work. You should consider the AveoTSD. Contact our technical department EM: info@mouthguardstore.com for more advice.
+                  //- 
+                  //- Why is my QNZ rough?
+                  //- Water was too hot during the fitting.
+                  //- If you place a QNZ in water that is too hot, it becomes very rough and not wearable and may need to be replaced. However, the QNZ does lose some of its smoothness when put in hot water – even at the right temperature.
+                  //- 
+                  //- What is the difference between the QNZ and the QNZ Elite?
+                  //- Price
+                  //- The QNZ is considerably cheaper than the custom QNZ Elite.
+                  //- Fit:
+                  //- The QNZ is a “boil-and-bite” mouthpiece, which means you put a thermo-plastic mold in hot water and then bite into it so that it takes the shape of your teeth; this is not customized specifically to your teeth. 
+                  //- The custom QNZ Elite is hand-made in a laboratory using a dental impression kit. The device is made using a near perfect impression of your teeth so fits more snugly.
+                  //- Size:
+                  //- The custom QNZ Elite has thinner walls and is less bulky so you aren’t as aware of it when you wear it.
+                  //- Comfort and Attachment: 
+                  //- The QNZ grips mainly the front teeth, whereas a custom QNZ Elite grips all the teeth. This helps it to sit more securely and comfortably on your teeth while you are asleep.
+                  //- 
+                  //- How do I get the white Airway Plug Out?
+                  //- Rarely but occasionally, the final cooling will shrink lock the Airway Plug making its removal difficult. 
+                  //- Solution:
+                  //- Prevention- do not allow the mouthpiece to overheat. Be sure to allow the proper amount of cooling time after boiling the water before immersion into the soaking cup. The main cause is having the water too hot when heat soaking the mouthpiece, it gets just too soft and squishy.
+                  //- If after fitting the airway plug resists easy removal, try this 
+                  //- Option one
+                  //- Make sure the QNZ is fully cooled. Squeeze the front outside section and rock the airway plug back and forth.
+                  //- Option two
+                  //- Re-soften the mouthpiece in warm water, not boiling. Bite back into the mouthpiece exactly as before and begin to wiggle the airway plug a little at a time to prevent final cooling contraction of the material. This should make it easier to remove after final cooling.
+                  //- Option three
+                  //- If you want to refit the mouthpiece later, coat the inside portion of the airway plug with Vaseline before the fitting. You still must keep the airway plug fully seated.
+                  //- Option Four
+                  //- If none of the above is satisfactory, contact us for a replacement QNZ. Use the Vaseline as described above to prevent a recurrence of the issue.                            
+                  //-       
+                .faq__help
+                  .faq__help__title Need help ?
+                  .faq__help__subtitle Let us know
+                  a(href='#').btn.btn--outline Contact us
+          
+          // CTA
+          .cta
+            .container
+              .row.row--alignCenter.row--column--tablet
+                .col.col--4-6
+                  .cta__title Wake up feeling great
+                  .cta__subtitle Try SleepTight Mouthpiece for only $9.95*
+                .col.col--2-6
+                  a(href="#sectionShop").btn.btn--primary.btn--huge Buy Now
+                  
     include shared/footer.pug
