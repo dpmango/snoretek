@@ -1,0 +1,245 @@
+// LAYOUT
+
+$mobile: width <= 568px
+$mobile-from: width >= 568px
+$tablet: width <= 768px
+$tablet-from: width <= 768px
+$desktop: width <= 1000px
+$desktop-from: width >= 1000px
+$wide: width <= 1200px
+$wide-from: width >= 1200px
+$hd: width <= 1680px
+$hd-from: width >= 1680px
+
+// variables
+$fontColor: #333
+$fontColorMuted: #999
+$borderColor: #DDE4E4
+
+$colorBlue: #2980b9
+$colorBlueLight: #3498db
+
+$colorGreen: #4ab68f
+$colorRed: #f45b63
+
+$colorYellow: #fda737
+$colorOrange: #f46d36
+
+
+*
+  box-sizing: border-box
+
+a
+  color: inherit
+  text-decoration: none
+  &:hover, &:focus, &:visited
+    text-decoration: none
+
+ul
+  list-style: none
+  li
+    display: inline-block
+
+
+body, html
+  background: white
+  color: $fontColor
+  font-family: 'Open Sans', sans-serif
+  font-size: 16px
+  max-width: 100%
+  overflow-x: hidden
+
+.page
+  position: relative
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  transition: transform .4s ease
+  &__content
+    flex-grow: 1
+  &.lock
+    overflow-y: hidden
+    max-height: 100vh
+  &::after
+    display: block
+    content: ' '
+    position: absolute 0 0 0 0
+    background: color(black a(30%))
+    opacity: 0
+    z-index: 10
+    transition: opacity .2s ease
+    pointer-events: none
+  &.is-active
+    transform: translate3d(300px, 0,0)
+    @media(width <= 414px)
+      transform: translate3d(250px, 0,0)
+    &::after
+      opacity: 1
+      pointer-events: all
+
+.container
+  max-width: 1000px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: 20px
+  padding-right: 20px
+  @media($mobile)
+    padding-left: 15px
+    padding-right: 15px
+
+.row
+  display: flex
+  margin-left: -12px
+  margin-right: -12px
+  &--condenced
+    .col
+      padding-left: 0
+      padding-right: 0
+    margin-left: 0
+    margin-right: 0
+  &--alignCenter
+    align-items: center
+  &--jcsb
+    justify-content: space-between
+  &--wrap
+    flex-wrap: wrap
+  &--jcc
+    justify-content: center
+  @media($desktop)
+    &--jcc--desktop
+      justify-content: center
+    &--wrap--desktop
+      flex-wrap: wrap
+    &--end--desktop
+      justify-content: flex-end
+  @media($tablet)
+    &--jcc--tablet
+      justify-content: center
+    &--wrap--tablet
+      flex-wrap: wrap
+    &--column--tablet
+      flex-direction: column
+  @media($mobile)
+    &--mobile
+      flex-direction: column
+
+
+//desktop first method
+.col
+  flex-grow: 0
+  flex-shrink: 1
+  padding-left: 12px
+  padding-right: 12px
+  &--1-6
+    flex-basis: 16.6%
+  &--2-6
+    flex-basis: 33.3%
+  &--3-6
+    flex-basis: 50%
+  &--4-6
+    flex-basis: 66.4%
+  &--5-6
+    flex-basis: 83%
+  &--full
+    flex-basis: 100%
+  &--1-4
+    flex-basis: 25%
+  &--2-4
+    flex-basis: 50%
+  &--3-4
+    flex-basis: 75%
+  &--auto
+    flex: 1 1 auto
+  &--65-100
+    flex-basis: 62%
+  &--35-100
+    flex-basis: 38%
+  &--pad-r-9
+    padding-right: 9%
+
+  @media($desktop)
+    &--full--desktop
+      flex-basis: 100%
+    &--310--desktop
+      flex-basis: 310px
+    &--360--desktop
+      flex-basis: 360px
+    &--450--desktop
+      flex-basis: 450px
+    &--640--desktop
+      flex-basis: 640px
+    &--auto--desktop
+      flex-basis: auto
+    &--grow--desktop
+      flex-grow: 1
+    &--auto-m--desktop
+      margin-left: auto
+      margin-right: auto
+
+  @media($tablet)
+    &--pad-r-9
+      padding-right: 3%
+
+
+  @media(width <= 785px)
+    &--360--desktop
+      flex-basis: 340px
+
+  @media($mobile)
+    &--360--desktop
+      flex-basis: 260px
+    &--full--mobile
+      flex-basis: 100%
+
+  @media($mobile-s)
+    &--640--desktop
+      flex-basis: 235px
+
+
+.offset
+  &--1-6
+    margin-left: 16.6%
+
+@media($desktop)
+  .offset
+    &--10--desktop
+      margin-left: 10%
+      margin-right: 10%
+    &--no--desktop
+      margin-left: 3%
+      margin-right: 3%
+
+@media($tablet)
+  .offset
+    &--10--desktop
+      margin-left: 5%
+      margin-right: 5%
+
+.no-pad
+  padding: 0
+
+.no-pad-l
+  padding-left: 0
+  @media($mobile)
+    padding-left: 15px
+
+.no-pad-r
+  padding-right: 0
+  @media($mobile)
+    padding-right: 15px
+
+.hidden--desktop
+  display: block
+  @media($desktop)
+    display: none
+
+.visible--desktop
+  display: none
+  @media($desktop)
+    display: block
+
+.visible--mobile
+  display: none
+  @media($mobile)
+    display: block

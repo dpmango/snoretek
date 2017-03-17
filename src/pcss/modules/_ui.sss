@@ -1,0 +1,94 @@
+// UI
+.ui-input
+  display: block
+  width: 100%
+  border: 1px solid $borderColor
+  background: white
+  padding: 10px 15px
+  border-radius: 4px
+  font-size: 15px
+  transition: all .3s ease
+  margin-bottom: 10px
+  &:focus
+    outline: none
+    border-color: $colorBlue
+    box-shadow: 0 1px 4px color($colorBlue a(15%))
+  &--card
+    background: white url('../images/sprite/credit-card-logos.png') no-repeat 95% center
+    background-size: 112px 20px
+
+
+
+.ui-select
+  position: relative
+  background: white
+  font-size: 15px
+  border-radius: 0
+  border-top-left-radius: 4px
+  border-top-right-radius: 4px
+  border-bottom: 1px solid $borderColor
+  cursor: pointer
+  padding: 10px 15px
+  margin-bottom: 10px
+  &--error
+    border-bottom: 1px solid $colorRed
+    label
+      color: $colorRed
+  &::after
+    display: block
+    content: ' '
+    position: absolute
+    right: 12px
+    top: 15px
+    size: 10px 6px
+    background: svg-load('../../images/svg/dropdown.svg') no-repeat right center
+    transition: all .25s ease
+  &:hover
+    label
+      color: color($fontColor a(70%))
+
+  label
+    color: #939999
+    cursor: pointer
+    transition: all .4s ease-in-out
+    letter-spacing: 1px
+    &.selected
+      color: $fontColor
+
+  &__drop
+    display: none
+    position: absolute
+    top: 39px
+    left: 0
+    width: 100%
+    z-index: 9
+    background: white
+    box-shadow: 0px 3px 6px 2px color(black a(10%))
+    span
+      font-size: 14px
+      display: block
+      padding: 7px 20px
+      transition: all .4s ease
+      &:hover
+        background: color($borderColor a(50%))
+
+  &.active
+    .ui-select__drop
+      display: block
+    &::after
+      transform: rotate(180deg)
+
+
+.ui-labeled
+  > label
+    display: block
+    font-size: 14px
+    color: $fontColorMuted
+    margin-bottom: 6px
+  .col
+    padding-right: 5px
+    padding-left: 5px
+    &:first-child
+      padding-left: 12px
+  .ui-select
+    font-size: 14px

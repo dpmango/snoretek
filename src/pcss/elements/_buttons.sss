@@ -1,0 +1,34 @@
+// buttons
+.btn
+  outline: none
+  -webkit-appearance: none
+  box-shadow: none
+  cursor: pointer
+  font-family: 'Montserrat', sans-serif
+  transition: all .4s ease-in-out
+  &:focus, &:active
+    outline: none
+
+  &--primary
+    padding: 8px 20px
+    background: $colorYellow
+    border-radius: 6px
+    color: white
+    border: 0
+    &:hover
+      background: color($colorYellow a(90%))
+      color: white
+
+  &--cta
+    padding: 12px 20px
+    font-size: 17px
+    font-weight: 700
+    background: $colorGreen
+    border-radius: 6px
+    color: white
+    border: 0
+    span span
+      font-weight: 400
+    &:hover
+      background: color($colorGreen a(90%))
+      color: white
