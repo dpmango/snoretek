@@ -77,8 +77,8 @@ $(document).ready(function(){
   });
 
 
-  // owl
-  $('#owlFirst').owlCarousel({
+  // Carousel
+  $('#owlTestimonials').owlCarousel({
     loop: true,
     nav: true,
     margin: 0,
@@ -86,11 +86,8 @@ $(document).ready(function(){
       0:{
         items: 1,
       },
-      600:{
-        items: 1,
-      },
-      1000:{
-        items: 1,
+      768:{
+        items: 2,
       }
     }
   });

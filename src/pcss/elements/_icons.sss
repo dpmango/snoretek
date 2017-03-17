@@ -3,9 +3,16 @@
   display: inline-block
   font-style: normal
   content: ' '
+  vertical-align: middle
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
 
-// mixin
-@define-mixin myIcon $name
-  background: url('../images/$(name).svg') no-repeat center
-  width: 1em
-  height: 1em
+.ico-benefit-1
+  background-image: svg-load('../../images/svg/001-mobile.svg', fill=$colorBlue)
+
+.ico-benefit-2
+  background-image: svg-load('../../images/svg/002-healthy.svg', fill=$colorBlue)
+
+.ico-benefit-3
+  background-image: svg-load('../../images/svg/003-sleeping.svg', fill=$colorBlue)

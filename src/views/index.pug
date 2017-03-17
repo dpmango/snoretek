@@ -155,33 +155,111 @@ html
                     button(type="submit").btn.btn--cta
                       span Pay <span>$9.95</span>
                     
-                    
-                          
-                      
-                    
-                  
-                  
-                
-                
-        
         // BENEFITS
         .benefits
           .container
             .row
+              .col.col--full
+                .section-title SnoreTek Features 
+            .row
               .col.col--4-6
                 .benefits__list
                   .benefits__block
-                    .benefits__title 1. Helps Open Mouth Snoring & Dry Mouth
+                    .benefits__block__icon
+                      i.ico.ico-benefit-1
+                    .benefits__block__content
+                      .benefits__title Helps Open Mouth Snoring & Dry Mouth
                     .benefits__description This is a simple effective solution for open mouth snoring and problems with dry mouth sleeping. You will be comfortable while wearing the safe noninvasive SnoreTek. 
                   .benefits__block
-                    .benefits__title 2. Prevents CPAP Bloating and Dry Mouth (Aerophagia)
+                    .benefits__block__icon
+                      i.ico.ico-benefit-2
+                    .benefits__block__content
+                      .benefits__title Prevents CPAP Bloating and Dry Mouth
                     .benefits__description The SnoreTek by keeping the mouth closed, offers CPAP users a solution to the common stomach bloating problem caused from air being blown into the open mouth. 
                   .benefits__block
-                    .benefits__title 3. Improves Snoring Mouthpiece Effectiveness
+                    .benefits__block__icon
+                      i.ico.ico-benefit-3
+                    .benefits__block__content
+                      .benefits__title Improves Snoring Mouthpiece Effectiveness
                     .benefits__description Snoring mouthpieces commonly fall out making them less effective. When worn while sleeping, the SnoreTek can prevent the mouthpiece from falling out and this helps stop snoring.
+              
+              .col.col--2-6
+                .benefits__image
+                  img(src='http://placehold.it/300x450')
 
-                
-                
-      
+        // HOW IT WORKS
+        .how-it-works
+          .container
+            .row
+              .col.col--full
+                .section-title How it works   
+            .row
+              .col.col--4-6
+                .how-it-works__text
+                  h3 Unique Snoring and Sleep Apnea Treatment Combination
+                  p Both of these products can help your snoring and sleep problems. Try them to see which offers you the best solution. You can use them in combination for maximum benefit.
 
+                  h3 SnoreTek
+                  p The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and prevents it from dropping back over the airway during sleep, which is the cause of snoring. This is a simple effective solution for open mouth snoring and problems with dry mouth sleeping. 
+                  p The SnoreTek by holding the mouth closed, offers CPAP users a solution to the common stomach bloating problem caused from air being blown into the open mouth, aerophagia. 
+                  p If you snoring mouthpiece falls out while sleeping, the SnoreTek chin strap can help keep the mouthpiece in place. You must be able to breathe freely through your nose for these applications to have benefit with the SnoreTek Band.
+              .col.col--2-6
+                ul.how-it-works__bullets
+                  li
+                    span stop snoring
+                  li 
+                    span hold your mouth closed to stop snoring
+                  li
+                    span hold your lower jaw forward to stop snoring
+                  li
+                    span stop snoring
+                  li
+                    span hold your mouth closed to stop snoring
+    
+        // TESTIMONAILS
+        .testimonials
+          .container
+            .row
+              .col.col--full
+                .section-title Testimonials
+            .row
+              .col.col--full
+                .owl-carousel#owlTestimonials
+                  // slide
+                  .testimonials__slide
+                    .testimonials__card
+                      .testimonials__card__image
+                        img(src="http://placehold.it/100x100")
+                      .testimonials__card__content
+                        .testimonials__card__name Bill Gates
+                        .testimonials__card__text 
+                          p Just what I need! This is the best solution that I ever found for my snoring problems. My snoring stopped overnight when I started using the neoprene strap. My wife and I can sleep more soundly at night as she claims that my snoring used to keep her up. It's also very easy to use, I just snap it around my chin and I can say goodbye to my snoring faster than I can say goodnight. It really works well.
+                  // slide
+                  .testimonials__slide
+                    .testimonials__card
+                      .testimonials__card__image
+                        img(src="http://placehold.it/100x100")
+                      .testimonials__card__content
+                        .testimonials__card__name Bill Gates
+                        .testimonials__card__text 
+                          p My wife says it works great. Comfortable to wear. Tried other devices and they did not work. This one really works.
+                  // slide
+                  .testimonials__slide
+                    .testimonials__card
+                      .testimonials__card__image
+                        img(src="http://placehold.it/100x100")
+                      .testimonials__card__content
+                        .testimonials__card__name Bill Gates
+                        .testimonials__card__text 
+                          p Just what I need! This is the best solution that I ever found for my snoring problems. My snoring stopped overnight when I started using the neoprene strap. My wife and I can sleep more soundly at night as she claims that my snoring used to keep her up. It's also very easy to use, I just snap it around my chin and I can say goodbye to my snoring faster than I can say goodnight. It really works well.
+                  // slide
+                  .testimonials__slide
+                    .testimonials__card
+                      .testimonials__card__image
+                        img(src="http://placehold.it/100x100")
+                      .testimonials__card__content
+                        .testimonials__card__name Bill Gates
+                        .testimonials__card__text 
+                          p My wife says it works great. Comfortable to wear. Tried other devices and they did not work. This one really works.
+                                                                        
     include shared/footer.pug
