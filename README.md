@@ -1,5 +1,8 @@
-# Gulp Starter Pack
-Gulp starter package to use with PostCss or sass, pug, autoprefixer, compile bootstrap, minify assets and perform other common front-end tasks.
+# SNORETEK
+Based on gulp starter pack to use with PostCss, pug, autoprefixer, compile bootstrap, minify assets and do other common front-end tasks.
+
+## Demo
+https://dpmango.github.io/snoretek/
 
 ## Getting stated
 __Development:__
@@ -30,3 +33,7 @@ __Production__
 - Magnific Popup 1.1.0
 - Masked input
 - CSS Hamburgers
+
+
+## Push command
+gulp build && git add . && git commit -m "gh-pages" && git push origin master && git subtree push --prefix dist origin gh-pages
