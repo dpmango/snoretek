@@ -93,6 +93,7 @@ $(document).ready(function(){
       price = 63.95
     }
     $('.shop__form__title span').text('$ ' + price + ' ');
+    $('.shop__form__cta span span ').text('$' + price);
 
     $('.shop__product__tab').each(function(i, val){
       if (selectedTab == $(this).data('product')){
@@ -253,12 +254,12 @@ $(document).ready(function(){
 
     if (activeStage >= 2) {
       if(state.val() == ''){
-          state.addClass('ui-input--error');
+          state.parent().addClass('ui-select--error');
           stateValid = false;
           return false;
       } else {
           stateValid = true;
-          state.removeClass('ui-input--error');
+          state.parent().removeClass('ui-select--error');
       }
       if(city.val() == '' || city.val().length <= 3){
           city.addClass('ui-input--error');
@@ -295,20 +296,20 @@ $(document).ready(function(){
           creditCard.removeClass('ui-input--error');
       }
       if(month.val().length == ''){
-          month.addClass('ui-input--error');
+          month.parent().addClass('ui-select--error');
           monthValid = false;
           return false;
       } else {
           monthValid = true;
-          month.removeClass('ui-input--error');
+          month.parent().removeClass('ui-select--error');
       }
       if(year.val().length == ''){
-          year.addClass('ui-input--error');
+          year.parent().addClass('ui-select--error');
           yearValid = false;
           return false;
       } else {
           yearValid = true;
-          year.removeClass('ui-input--error');
+          year.parent().removeClass('ui-select--error');
       }
       if(cvc.val().length < 3){
           cvc.addClass('ui-input--error');

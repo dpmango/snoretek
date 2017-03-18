@@ -3,7 +3,6 @@
   display: block
   width: 100%
   border: 2px solid transparent
-  border-bottom: 2px solid $borderColor
   background: white
   padding: 10px 15px
   border-radius: 4px
@@ -28,15 +27,14 @@
   position: relative
   background: white
   font-size: 15px
-  border-radius: 0
-  border-top-left-radius: 4px
-  border-top-right-radius: 4px
-  border-bottom: 1px solid $borderColor
+  color: $fontColor
+  border: 2px solid transparent
+  border-radius: 4px
   cursor: pointer
   padding: 10px 15px
   margin-bottom: 10px
   &--error
-    border-bottom: 1px solid $colorRed
+    border-color: $colorRed
     label
       color: $colorRed
   &::after
@@ -44,25 +42,24 @@
     content: ' '
     position: absolute
     right: 12px
-    top: 15px
+    top: 18px
     size: 10px 6px
     background: svg-load('../../images/svg/dropdown.svg') no-repeat right center
     transition: all .25s ease
-  &:hover
-    label
-      color: color($fontColor a(70%))
 
   label
     color: #939999
     cursor: pointer
     transition: all .4s ease-in-out
-    letter-spacing: 1px
     &.selected
       color: $fontColor
 
   &__drop
+    border-top: 1px solid $borderColor
     display: none
     position: absolute
+    max-height: 200px
+    overflow-y: scroll
     top: 39px
     left: 0
     width: 100%

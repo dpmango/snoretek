@@ -1462,7 +1462,7 @@ body, html {
     outline: none;
 }
 .btn--primary {
-    padding: 8px 20px;
+    padding: 12px 20px;
     border: 0;
     background: #f46d36;
     color: white;
@@ -1475,7 +1475,7 @@ body, html {
 .btn--cta {
     padding: 12px 20px;
     border: 0;
-    background: #4ab68f;
+    background: #f46d36;
     color: white;
     font-weight: 700;
     font-size: 17px;
@@ -1485,8 +1485,8 @@ body, html {
     font-weight: 400;
 }
 .btn--cta:hover {
-    background: #4ab68f;
-    background: rgba(74, 182, 143, 0.9);
+    background: #f46d36;
+    background: rgba(244, 109, 54, 0.9);
     color: white;
 }
 .btn--outline {
@@ -1741,7 +1741,6 @@ body, html {
     padding: 10px 15px;
     width: 100%;
     border: 2px solid transparent;
-    border-bottom: 2px solid #DDE4E4;
     border-radius: 4px;
     background: white;
     font-size: 15px;
@@ -1770,17 +1769,15 @@ body, html {
     position: relative;
     margin-bottom: 10px;
     padding: 10px 15px;
-    border-bottom: 1px solid #DDE4E4;
-    border-radius: 0;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border: 2px solid transparent;
+    border-radius: 4px;
     background: white;
+    color: #40454C;
     font-size: 15px;
     cursor: pointer;
 }
 .ui-select label {
     color: #939999;
-    letter-spacing: 1px;
     cursor: pointer;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
@@ -1789,14 +1786,14 @@ body, html {
     color: #40454C;
 }
 .ui-select--error {
-    border-bottom: 1px solid #f45b63;
+    border-color: #f45b63;
 }
 .ui-select--error label {
     color: #f45b63;
 }
 .ui-select:after {
     position: absolute;
-    top: 15px;
+    top: 18px;
     right: 12px;
     display: block;
     width: 10px;
@@ -1806,17 +1803,16 @@ body, html {
     -webkit-transition: all .25s ease;
     transition: all .25s ease;
 }
-.ui-select:hover label {
-    color: #40454c;
-    color: rgba(64, 69, 76, 0.7);
-}
 .ui-select__drop {
     position: absolute;
     top: 39px;
     left: 0;
     z-index: 9;
     display: none;
+    overflow-y: scroll;
+    max-height: 200px;
     width: 100%;
+    border-top: 1px solid #DDE4E4;
     background: white;
     -webkit-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
             box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
@@ -2304,6 +2300,7 @@ body, html {
     content: ' ';
 }
 #formPayment.show, #formShipping.show {
+    overflow: visible;
     height: auto;
 }
 #formPayment.show:after, #formShipping.show:after {
