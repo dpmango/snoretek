@@ -33,6 +33,7 @@
   cursor: pointer
   padding: 10px 15px
   margin-bottom: 10px
+
   &--error
     border-color: $colorRed
     label
@@ -42,15 +43,19 @@
     content: ' '
     position: absolute
     right: 12px
-    top: 18px
+    top: 15px
     size: 10px 6px
     background: svg-load('../../images/svg/dropdown.svg') no-repeat right center
     transition: all .25s ease
 
   label
+    display: inline-block
     color: #939999
     cursor: pointer
     transition: all .4s ease-in-out
+    max-height: 18px
+    white-space: nowrap
+    overflow: hidden
     &.selected
       color: $fontColor
 
@@ -69,7 +74,7 @@
     span
       font-size: 14px
       display: block
-      padding: 7px 20px
+      padding: 7px 15px
       transition: all .4s ease
       &:hover
         background: color($borderColor a(50%))
@@ -85,7 +90,7 @@
   > label
     display: block
     font-size: 14px
-    color: $fontColorMuted
+    color: white
     margin-bottom: 6px
   .col
     padding-right: 5px
@@ -94,6 +99,9 @@
       padding-left: 12px
   .ui-select
     font-size: 14px
+  .col
+    .col--4-6
+      max-width: 120px
 
 
 // RADIO

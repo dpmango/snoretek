@@ -1777,7 +1777,11 @@ body, html {
     cursor: pointer;
 }
 .ui-select label {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 18px;
     color: #939999;
+    white-space: nowrap;
     cursor: pointer;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
@@ -1793,7 +1797,7 @@ body, html {
 }
 .ui-select:after {
     position: absolute;
-    top: 18px;
+    top: 15px;
     right: 12px;
     display: block;
     width: 10px;
@@ -1819,7 +1823,7 @@ body, html {
 }
 .ui-select__drop span {
     display: block;
-    padding: 7px 20px;
+    padding: 7px 15px;
     font-size: 14px;
     -webkit-transition: all .4s ease;
     transition: all .4s ease;
@@ -1839,7 +1843,7 @@ body, html {
 .ui-labeled > label {
     display: block;
     margin-bottom: 6px;
-    color: #82898f;
+    color: white;
     font-size: 14px;
 }
 .ui-labeled .col {
@@ -1851,6 +1855,9 @@ body, html {
 }
 .ui-labeled .ui-select {
     font-size: 14px;
+}
+.ui-labeled .col .col--4-6 {
+    max-width: 120px;
 }
 /* RADIO */
 .ui-checkbox {
@@ -2351,6 +2358,7 @@ body, html {
         margin-top: 30px;
         margin-right: auto;
         margin-left: auto;
+        width: 400px;
     }
     .shop__logos {
         -webkit-justify-content: center;
