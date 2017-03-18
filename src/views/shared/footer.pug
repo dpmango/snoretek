@@ -1,12 +1,12 @@
 // FOOTER::START
 footer.footer
   .container
-    .row.row--alignCenter
+    .row.row--alignCenter.row--column--desktop
       .col.col--4-6
-        .footer__text SnoreTek name is a supplier of snoring solutions
+        // .footer__text SnoreTek name is a supplier of snoring solutions
         
         .footer__copywrite
-          span All rights reserved 2017 @ Company Name
+          span All rights reserved © 2017 SnoreTek Ltd.
           a(href="#termsModal").popup-with-zoom-anim Terms & Conditions
           a(href="#privacyModal").popup-with-zoom-anim Privacy Policy
           
@@ -22,8 +22,20 @@ footer.footer
             i.ico.ico-insta
               
 
-#termsModal.zoom-anim-dialog.mfp-hide
-  h2 TEMPLATE WEBSITE TERMS AND CONDITIONS
+// MODALS
+#contactModal.zoom-anim-dialog.modal.mfp-hide
+  .modal__title Contact us
+  form(action="#")
+    input(type="text" placeholder="Your name").ui-input
+    input(type="email" placeholder="Email").ui-input
+    textarea(placeholder="Your message").ui-input
+    .text-center
+      button(type="submit").btn.btn--primary Contact us
+    
+  
+  
+#termsModal.zoom-anim-dialog.modal.mfp-hide
+  .modal__title TEMPLATE WEBSITE TERMS AND CONDITIONS
   p
     | This document was created using a Contractology template available at 
     a(href='http://www.contractology.com') http://www.contractology.com
@@ -268,8 +280,8 @@ footer.footer
   p
     | You can contact [NAME] by email to [EMAIL].
           
-#privacyModal.zoom-anim-dialog.mfp-hide
-  h2 TEMPLATE WEBSITE TERMS AND CONDITIONS
+#privacyModal.zoom-anim-dialog.modal.mfp-hide
+  .modal__title Privacy policy
   p Content here
   
     

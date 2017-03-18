@@ -28,9 +28,7 @@ html
             button.hamburger.hamburger--spin(type='button')
               span.hamburger-box
                 span.hamburger-inner
-
-
-          
+    
       .page__content
         // SHOP
         .shop#sectionShop
@@ -93,7 +91,7 @@ html
   
               .col.col--3-6.col--auto--desktop.col--auto-m--tablet
                 form(action="#").shop__form
-                  .shop__form__title <span> $ 9.95 </span> Try it today
+                  .shop__form__title.shop__form__title--right Try it today <span> $ 28.95 </span>
                   .shop__form__section
                     .row
                       .col.col--3-6
@@ -172,16 +170,28 @@ html
                           .ui-labeled
                             label CVC
                             input(type="text" name="cvc" placeholder="XXX").ui-input
-                            
-                  .shop__form__cta
-                    button(type="submit").btn.btn--cta.btn--disabled
-                      i.ico.ico-cart
-                      span Buy now <span>$9.95</span>
+                  
                   .ui-checkbox
                     input(type='checkbox' name="agree" id="agree" value="yes")
                     label(for='agree') I agree with <a href='#termsModal' class="popup-with-zoom-anim">Terms and conditions</a>     
                     
-                               
+                  .shop__form__cta
+                    button(type="submit").btn.btn--cta.btn--disabled
+                      i.ico.ico-cart
+                      span Buy now <span>$9.95</span>
+            
+            .row
+              .col.col--full
+                .shop__logos
+                  .shop__logos__image.shop__logos__image--fda
+                    img(src="images/fda.png")
+                  .shop__logos__image.shop__logos__image--90-days
+                    img(src="images/90-days.png")
+                  .shop__logos__image.shop__logos__image--fda
+                    img(src="images/fda.png")
+                  .shop__logos__image.shop__logos__image--90-days
+                    img(src="images/90-days.png")
+                           
         // FEATURES
         .features#sectionFeatures
           .container
@@ -212,7 +222,7 @@ html
               
               .col.col--2-6
                 .features__image
-                  img(src='http://placehold.it/300x450')
+                  img(src='images/pic.png')
 
         // HOW IT WORKS
         .how-it-works#sectionHowItWorks
@@ -220,7 +230,7 @@ html
             .row
               .col.col--full
                 .section-title How it works   
-            .row
+            .row.row--column--tablet
               .col.col--4-6
                 .how-it-works__text
                   h3 Unique Snoring and Sleep Apnea Treatment Combination
@@ -257,7 +267,7 @@ html
                   .testimonials__slide
                     .testimonials__card
                       .testimonials__card__image
-                        img(src="http://placehold.it/100x100")
+                        img(src="http://www.independent.org/images/bios_hirez/nelson_robert_4_hirez.jpg")
                       .testimonials__card__content
                         .testimonials__card__name Bill Gates
                         .testimonials__card__text 
@@ -266,7 +276,7 @@ html
                   .testimonials__slide
                     .testimonials__card
                       .testimonials__card__image
-                        img(src="http://placehold.it/100x100")
+                        img(src="https://www.econ.uzh.ch/dam/jcr:ffffffff-a270-73f8-ffff-ffff99e83565/Frank.jpg")
                       .testimonials__card__content
                         .testimonials__card__name Bill Gates
                         .testimonials__card__text 
@@ -275,7 +285,7 @@ html
                   .testimonials__slide
                     .testimonials__card
                       .testimonials__card__image
-                        img(src="http://placehold.it/100x100")
+                        img(src="http://www.nfmt.com/images/speakers/dazel.jpg")
                       .testimonials__card__content
                         .testimonials__card__name Bill Gates
                         .testimonials__card__text 
@@ -474,7 +484,9 @@ html
                 .faq__help
                   .faq__help__title Need help ?
                   .faq__help__subtitle Let us know
-                  a(href='#').btn.btn--outline Contact us
+                  a(href='#contactModal').btn.btn--outline.popup-with-zoom-anim Contact us
+                  .faq__help__contacts
+                    a(href="#mailto:info@snoretek.com") info@snoretek.com
           
           // CTA
           .cta
@@ -482,7 +494,7 @@ html
               .row.row--alignCenter.row--column--tablet
                 .col.col--4-6
                   .cta__title Wake up feeling great
-                  .cta__subtitle Try SleepTight Mouthpiece for only $9.95*
+                  .cta__subtitle Try SnoreTek Mouthpiece for just a $28.95
                 .col.col--2-6
                   a(href="#sectionShop").btn.btn--primary.btn--huge Buy Now
                   

@@ -78,11 +78,21 @@ $(document).ready(function(){
   });
 
   // PRODUCT TABS
+  var selectedTab, price;
   $('.shop__product__tabs-nav__tab').on('click', function(){
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
 
-    var selectedTab = $(this).data('product');
+    selectedTab = $(this).data('product');
+
+    if (selectedTab == 1){
+      price = 28.95
+    } else if(selectedTab == 2) {
+      price = 39.95
+    } else if(selectedTab == 3){
+      price = 63.95
+    }
+    $('.shop__form__title span').text('$ ' + price + ' ');
 
     $('.shop__product__tab').each(function(i, val){
       if (selectedTab == $(this).data('product')){

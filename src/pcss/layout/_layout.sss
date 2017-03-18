@@ -1,5 +1,5 @@
 // LAYOUT
-
+$mobile-s: width <= 414px
 $mobile: width <= 568px
 $mobile-from: width >= 568px
 $tablet: width <= 768px
@@ -13,9 +13,9 @@ $hd-from: width >= 1680px
 
 // variables
 $fontColor: #40454C
-$fontColorMuted: #A4A9AA
+$fontColorMuted: #82898f
 $borderColor: #DDE4E4
-$lightColor: #F8F8F8
+$lightColor: #f8fbfd
 
 $colorBlue: #2980b9
 $colorBlueLight: #3498db
@@ -55,6 +55,12 @@ body, html
   max-width: 100%
   min-width: 320px
   overflow-x: hidden
+
+@media($mobile)
+  body, html
+    font-size: 14px
+  p
+    line-height: 1.4
 
 .page
   position: relative
@@ -121,6 +127,8 @@ body, html
       flex-wrap: wrap
     &--end--desktop
       justify-content: flex-end
+    &--column--desktop
+      flex-direction: column
   @media($tablet)
     &--jcc--tablet
       justify-content: center
@@ -172,6 +180,8 @@ body, html
       margin-right: auto
 
   @media($tablet)
+    &--full-tablet
+      flex-basis: 100%
     &--auto-m--tablet
       margin-left: auto
       margin-right: auto
@@ -233,3 +243,7 @@ body, html
   display: none
   @media($mobile)
     display: block
+
+
+.text-center
+  text-align: center

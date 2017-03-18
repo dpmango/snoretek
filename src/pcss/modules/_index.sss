@@ -12,10 +12,14 @@
   transition: transform .3s ease-out
   &--transformed
     transform: translate3d(0,-100%,0)
+    .header__menu .btn
+      display: inline-block
   &--sticky
     position: fixed
     transform: translate3d(0,0,0)
     box-shadow: 0 2px 6px color(black a(30%))
+    .header__menu .btn
+      display: inline-block
 
   .row
     height: 60px
@@ -42,6 +46,7 @@
         border-bottom: 1px dashed $colorYellow
     .btn
       margin-left: 10px
+      display: none
   .hamburger
     display: none
 
@@ -89,8 +94,9 @@
 .shop
   padding-top: 35px
   &__title
-    font-size: 32px
+    font-size: 30px
     font-family: 'Montserrat'
+    text-transform: uppercase
     font-weight: 700
     text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee,
                   2px 1px 1px #ccc, 1px 2px 1px #eee,
@@ -98,24 +104,32 @@
     margin-bottom: 20px
 
   &__product
+    &__subtitle
+      margin-bottom: 10px
+      text-align: center
     &__tabs-nav
       display: flex
       justify-content: space-between
+      border-top: 3px solid $borderColor
+      padding-top: 10px
       border-bottom: 3px solid $borderColor
       padding-bottom: 10px
       &__tab
         position: relative
         flex: 0 1 30%
-        &::after
+        &::after, &::before
           display: block
           content: ' '
           position: absolute
-          bottom: -13px
           left: 0
           width: 100%
           height: 3px
           background: transparent
           transition: all .3s ease
+        &::after
+          bottom: -13px
+        &::before
+          top: -13px
         a
           display: block
           position: relative
@@ -153,7 +167,7 @@
           position: relative
           z-index: 3
         &.active
-          &::after
+          &::after, &::before
             background: $colorBlueLight
           a
             background: $colorBlueLight
@@ -169,7 +183,7 @@
 
     &__image
       position: relative
-      background: $lightColor
+      background: $colorBlue
       padding: 10px
       border-radius: 6px
       display: inline-block
@@ -201,17 +215,11 @@
       font-family: 'Montserrat'
       font-weight: 700
       color: $colorBlue
-      &::after
-        display: block
-        content: ' '
-        margin-top: 5px
-        width: 30px
-        height: 2px
-        background: $colorBlue
+
 
   &__form
-    background: #F3F3F3
-    border: 2px solid $borderColor
+    background: $colorBlue
+    color: white
     border-radius: 6px
     margin-left: auto
     width: 400px
@@ -223,18 +231,34 @@
       font-weight: 700
       text-transform: uppercase
       margin-bottom: 15px
+      &--right
+        text-align: right
       span
         font-weight: 700
-        color: $colorGreen
-        font-size: 26px
+        color: white
+        font-size: 28px
+        letter-spacing: -.5px
     &__section
-      border-top: 2px solid $borderColor
+      border-top: 1px solid $borderColor
       padding-top: 15px
       margin-bottom: 15px
 
     &__cta
       text-align: center
       margin-top: 20px
+
+  &__logos
+    margin-top: 40px
+    display: flex
+    align-items: center
+    &__image
+      margin-right: 20px
+      &--fda
+        max-width: 110px
+      &--90-days
+        max-width: 60px
+      img
+        max-width: 100%
 
 #formPayment, #formShipping
   height: 40px
@@ -244,7 +268,9 @@
     display: block
     content: ' '
     position: absolute 0 0 0 0
-    background: linear-gradient(to bottom, color(white a(40%)), color(white a(100%)) )
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+    background: linear-gradient(to bottom, color(white a(30%)) 0%, color($colorBlue a(50%)) 100% )
   &.show
     height: auto
     &::after
@@ -255,43 +281,92 @@
     &__form
       margin-left: auto
 
+@media(width <= 850px)
+  .shop
+    &__product
+      &__tabs-nav
+        &__tab
+          flex-basis: 31%
+          a
+            font-size: 14px
+    &__form
+      width: 360px
+
 @media($tablet)
   .shop
+    &__product
+      &__tabs-nav
+        &__tab
+          a
+            display: flex
+            height: 100%
+            justify-content: center
+            align-items: center
     &__form
       margin-top: 30px
       margin-left: auto
       margin-right: auto
+    &__logos
+      justify-content: center
+
+@media($mobile)
+  .shop
+    padding-top: 25px
+    &__title
+      font-size: 24px
+      text-align: center
+    &__form
+      &__title
+        font-size: 16px
+
+@media($mobile-s)
+  .shop
+    &__form
+      width: 100%
+      padding-left: 20px
+      padding-right: 20px
+
+
 
 .section-title
-  font-size: 32px
+  font-size: 36px
   font-family: 'Montserrat'
+  text-transform: uppercase
   font-weight: 700
   text-align: center
-  margin-bottom: 35px
+  margin-bottom: 45px
   position: relative
   &::before
     display: block
     content: ' '
     position: absolute
     left: 50%
-    bottom: -10px
+    bottom: -20px
     transform: translateX(-50%)
     width: 80px
-    height: 3px
-    background: $colorBlue
+    height: 6px
+    background: $borderColor
+
+@media($tablet)
+  .seciton-title
+    font-size: 32px
+
+@media($mobile)
+  .section-title
+    font-size: 28px
 
 
 // BENEFITS
 .features
   background: $lightColor
   margin-top: 80px
-  padding-top: 50px
-  padding-bottom: 50px
+  padding-top: 80px
+  padding-bottom: 70px
   &__list
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    margin-top: 30px
+    margin-top: 40px
   &__block
     flex: 0 1 48%
     display: flex
@@ -330,9 +405,29 @@
     img
       max-width: 100%
 
+@media($tablet)
+  .features
+    background: $lightColor
+    margin-top: 60px
+    padding-top: 60px
+    padding-bottom: 50px
+
+@media($mobile)
+  .features
+    &__block
+      flex-basis: 100%
+      align-items: center
+    &__list
+      margin-top: 20px
+
+    &__title
+      max-width: 300px
+
+
+
 // How it works
 .how-it-works
-  margin-top: 70px
+  margin-top: 80px
   &__text
     margin-top: 30px
     h3
@@ -343,6 +438,7 @@
     padding: 0
     margin-top: 30px
     li
+      display: block
       position: relative
       font-weight: 700
       font-size: 20px
@@ -360,13 +456,26 @@
         display: inline-block
         padding-left: 40px
 
+@media($tablet)
+  .how-it-works
+    margin-top: 60px
+    &__text
+      margin-top: 20px
+      h3
+        font-size: 18px
+
+@media($mobile)
+  .how-it-works
+    &__bullets
+      li
+        font-size: 18px
 
 // TESTIMONAILS
 .testimonials
   background: $lightColor
   margin-top: 80px
-  padding-top: 50px
-  padding-bottom: 50px
+  padding-top: 70px
+  padding-bottom: 70px
   .col--full
     width: 100%
   .owl-carousel
@@ -388,6 +497,7 @@
         left: 50%
         transform: translate(-50%, -50%)
         max-width: 100%
+        min-height: 100px
     &__content
       flex: 1 1 auto
     &__name
@@ -396,17 +506,29 @@
       font-size: 20px
       color: $colorBlue
     &__text
-      font-size: 17px
-
+      font-size: 14px
+      line-height: 1.3em
       margin-top: 20px
+
+@media($tablet)
+  .testimonials
+    margin-top: 60px
+    padding-top: 50px
+    padding-bottom: 50px
+
 
 .owl-next, .owl-prev
   font-size: 0
 
 .owl-nav
   position: absolute
-  top: -110px
+  top: -127px
   right: 0
+
+@media($mobile)
+  .owl-nav
+    display: none
+
 
 .owl-prev, .owl-next
   display: inline-block
@@ -452,11 +574,16 @@
     h3
       font-size: 20px
 
+@media($tablet)
+  .about
+    margin-top: 50px
+
+
 // FAQ
 .faq
   background: $lightColor
   margin-top: 80px
-  padding-top: 50px
+  padding-top: 70px
   padding-bottom: 80px
   &__wrapper
     display: flex
@@ -494,14 +621,17 @@
       font-weight: 700
       position: relative
       cursor: pointer
-      padding: 14px 20px
+      padding: 14px 20px 14px 40px
       transition: all .3s ease
       &::before
         display: inline-block
+        position: absolute
+        top: 40%
+        left: 20px
+        transform: translateY(-50%)
         content: ' '
         background: svg-load('../../images/svg/triangle.svg', fill=$fontColorMuted) no-repeat center
         size: 10px
-        margin-right: 10px
         vertical-align: middle
         background-size: contain
         transform: rotate(90deg)
@@ -524,7 +654,7 @@
     flex-direction: column
     align-items: center
     justify-content: center
-    background: $colorYellow
+    background: $colorOrange
     border-radius: 6px
     padding: 30px 20px
     text-align: center
@@ -539,9 +669,18 @@
       font-size: 18px
       margin-top: 20px
       margin-bottom: 20px
+    &__contacts
+      border-top: 1px dotted white
+      margin-top: 15px
+      padding-top: 10px
+      font-size: 14px
+
 
 @media($tablet)
   .faq
+    margin-top: 50px
+    padding-top: 50px
+    padding-bottom: 40px
     &__wrapper
       flex-direction: column
       margin-top: 20px
@@ -552,8 +691,19 @@
     &__list
       margin-left: 0
     &__help
+      margin-top: 20px
       margin-left: auto
       margin-right: auto
+
+@media($mobile)
+  .faq
+    &__item
+      margin-bottom: 10px
+      &__title
+
+        font-size: 16px
+
+
 
 // CTA
 .cta
@@ -580,20 +730,30 @@
     &__subtitle
       margin-bottom: 40px
 
+@media($mobile)
+  .cta
+    text-align: center
+
+
 // FOOTER
 .footer
-  background: #F1F7F7
+  background: $lightColor
   padding: 40px 0 30px 0
   &__text
     color: $fontColorMuted
     width: 50%
     margin-bottom: 10px
   &__copywrite
+    color: $fontColorMuted
     font-size: 14px
     a
       display: inline-block
       margin-left: 10px
-      text-decoration: underline
+      border-bottom: 1px dashed $colorOrange
+      color: $colorOrange
+      transition: border .2s ease
+      &:hover
+        border-color: transparent
   &__socials
     display: flex
     justify-content: flex-end
@@ -603,9 +763,42 @@
       justify-content: center
       align-items: center
       background: $borderColor
-
       size: 38px
       border-radius: 4px
       margin-right: 10px
       &:last-child
         margin-right: 0
+      .ico
+        transition: all .3s ease
+
+@media($desktop)
+  .footer
+    &__socials
+      margin-top: 20px
+
+@media($mobile)
+  .footer
+    text-align: center
+
+
+// MODAL
+.modal
+  &__title
+    margin-bottom: 20px
+    font-size: 26px
+    font-family: 'Montserrat'
+    font-weight: 700
+    color: $colorBlue
+    &::after
+      display: block
+      content: ' '
+      margin-top: 5px
+      width: 30px
+      height: 2px
+      background: $colorBlue
+
+  .ui-input
+    border: 1px solid $borderColor
+  .btn
+    margin-top: 10px
+    text-transform: uppercase
