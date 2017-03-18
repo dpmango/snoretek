@@ -15,7 +15,7 @@ html
       // HEADER
       header.header
         .container
-          .row.row--alignCenter.row--jcsb
+          .row.row--condenced.row--alignCenter.row--jcsb
             .header__logo
               img(src='images/logo-white.png')
             .header__menu
@@ -56,20 +56,40 @@ html
                   .shop__product__tabs-content
                     // next prodcut
                     .shop__product__tab.active(data-product='1')
-                      .shop__product__image
-                        img(src="images/product1.jpg")
                       .shop__product__title Mouthpiece for snoring
+                      a(href="images/product1.jpg").shop__product__image.image-popup-no-margins
+                        img(src="images/product1.jpg")
+                      
                       .shop__product__description
                         p The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and forward. This prevents the tongue from dropping back over the airway during sleep, which is the cause of snoring. 
-
-                        p 90 Day Risk Free Return Policy!
-
+                        p 
+                          b 90 Day Risk Free Return Policy!
                         You must be able to breathe freely through your nose for these applications to have benefit.
                                             
                     // next prodcut
-                    .shop__product__tab.active(data-product='2')
+                    .shop__product__tab(data-product='2')
+                      .shop__product__title Chin strap for snoring
+                      a(href="images/product1.jpg").shop__product__image.image-popup-no-margins
+                        img(src="images/product1.jpg")
+                      
+                      .shop__product__description
+                        p The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and forward. This prevents the tongue from dropping back over the airway during sleep, which is the cause of snoring. 
+                        p 
+                          b 90 Day Risk Free Return Policy!
+                        You must be able to breathe freely through your nose for these applications to have benefit.
+                                    
                     // next prodcut
-                    .shop__product__tab.active(data-product='3')  
+                    .shop__product__tab(data-product='3')  
+                      .shop__product__title Combo pack 2 in 1
+                      a(href="images/product3.jpg").shop__product__image.image-popup-no-margins
+                        img(src="images/product3.jpg")
+                      
+                      .shop__product__description
+                        p The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and forward. This prevents the tongue from dropping back over the airway during sleep, which is the cause of snoring. 
+                        p 
+                          b 90 Day Risk Free Return Policy!
+                        You must be able to breathe freely through your nose for these applications to have benefit.
+                                    
   
               .col.col--3-6.col--auto--desktop.col--auto-m--tablet
                 form(action="#").shop__form
@@ -77,84 +97,91 @@ html
                   .shop__form__section
                     .row
                       .col.col--3-6
-                        input(type="text" placeholder="First name").ui-input
+                        input(type="text" name="first-name" placeholder="First name").ui-input
                       .col.col--3-6
-                        input(type="text" placeholder="Last name").ui-input
+                        input(type="text" name="last-name" placeholder="Last name").ui-input
                     
-                    input(type="email" placeholder="Email").ui-input
-                    input(type="tel" placeholder="Phone number").ui-input
+                    input(type="email" name="email" placeholder="Email").ui-input
+                    input(type="tel" name="phone" placeholder="Phone number").ui-input
                   
                   // NEXT SECTION
                   .shop__form__section
-                    .shop__form__title.shop__form__title--section Shipping details
-                    .ui-select
-                      label Select your state
-                      .ui-select__drop
-                        span(data-select='State name') State name
-                        span(data-select='State name') State name
-                        span(data-select='State name') State name
-                        span(data-select='State name') State name
-                        span(data-select='State name') State name
-                        span(data-select='State name') State name
-                        span(data-select='State name') State name
-                      // selected value will be passed to this input 
-                      input(type="hidden" name="state" value="")
-                    
-                    .row
-                      .col.col--4-6
-                        input(type="text" placeholder="City").ui-input
-                      .col.col--2-6
-                        input(type="text" placeholder="ZIP").ui-input
-                        
-                    input(type="text" placeholder="Street addres").ui-input
-                  
-                  // NEXT SECTION
-                  .shop__form__section
-                    .shop__form__title.shop__form__title--section Payment details
-                    input(type="text" name="credit-card" placeholder="Credit card number").ui-input.ui-input--card
-                    .row
-                      .col.col--4-6
-                        .ui-labeled
-                          label Expiration
-                          .row
-                            .col.col--4-6
-                              .ui-select
-                                label MM
-                                .ui-select__drop
-                                  span(data-select='January (01)') January (01)
-                                  span(data-select='February (02)') February (02)
-                                  span(data-select='March (03)') March (03)
-                                  span(data-select='April (04)') April (04)
-                                  span(data-select='May (05)') May (05)
-                                  span(data-select='June (06)') June (06)
-                                  span(data-select='July (07)') July (07)
-                                  span(data-select='August (08)') August (08)
-                                  span(data-select='September (09)') September (09)
-                                  span(data-select='October (10)') October (10)
-                                  span(data-select='November (11)') November (11)
-                                  span(data-select='December (12)') December (12)
-                            .col.col--2-4
-                              .ui-select
-                                label YYYY
-                                .ui-select__drop
-                                  span(data-select='2017') 2017
-                                  span(data-select='2018') 2018
-                                  span(data-select='2019') 2019
-                                  span(data-select='2020') 2020
-                                  span(data-select='2021') 2021
-                      .col.col--2-6
-                        .ui-labeled
-                          label CVC
-                          input(type="text" name="cvc" placeholder="XXX").ui-input
-                            
+                    .shop__form__title.shop__form__title--section 2. Shipping details
+                    #formShipping
+                      .ui-select
+                        label Select your state
+                        .ui-select__drop
+                          span(data-select='State name') State name
+                          span(data-select='State name') State name
+                          span(data-select='State name') State name
+                          span(data-select='State name') State name
+                          span(data-select='State name') State name
+                          span(data-select='State name') State name
+                          span(data-select='State name') State name
                         // selected value will be passed to this input 
-                        input(type="hidden" name="state" value="")  
-                    
-                    
+                        input(type="hidden" name="state" value="")
+                      
+                      .row
+                        .col.col--4-6
+                          input(type="text" name="city" placeholder="City").ui-input
+                        .col.col--2-6
+                          input(type="text" name="zip" placeholder="ZIP").ui-input
+                          
+                      input(type="text" name="street" placeholder="Street addres").ui-input
+                  
+                  // NEXT SECTION
+                  .shop__form__section
+                    .shop__form__title.shop__form__title--section 3. Payment details
+                    #formPayment
+                      input(type="text" name="credit-card" placeholder="Credit card number").ui-input.ui-input--card
+                      .row
+                        .col.col--4-6
+                          .ui-labeled
+                            label Expiration
+                            .row
+                              .col.col--4-6
+                                .ui-select
+                                  label MM
+                                  .ui-select__drop
+                                    span(data-select='January (01)') January (01)
+                                    span(data-select='February (02)') February (02)
+                                    span(data-select='March (03)') March (03)
+                                    span(data-select='April (04)') April (04)
+                                    span(data-select='May (05)') May (05)
+                                    span(data-select='June (06)') June (06)
+                                    span(data-select='July (07)') July (07)
+                                    span(data-select='August (08)') August (08)
+                                    span(data-select='September (09)') September (09)
+                                    span(data-select='October (10)') October (10)
+                                    span(data-select='November (11)') November (11)
+                                    span(data-select='December (12)') December (12)
+                                  // selected value will be passed to this input 
+                                  input(type="hidden" name="month" value="")
+                              .col.col--2-4
+                                .ui-select
+                                  label YYYY
+                                  .ui-select__drop
+                                    span(data-select='2017') 2017
+                                    span(data-select='2018') 2018
+                                    span(data-select='2019') 2019
+                                    span(data-select='2020') 2020
+                                    span(data-select='2021') 2021
+                                  // selected value will be passed to this input 
+                                  input(type="hidden" name="year" value="")
+                        .col.col--2-6
+                          .ui-labeled
+                            label CVC
+                            input(type="text" name="cvc" placeholder="XXX").ui-input
+                            
                   .shop__form__cta
-                    button(type="submit").btn.btn--cta
-                      span Pay <span>$9.95</span>
+                    button(type="submit").btn.btn--cta.btn--disabled
+                      i.ico.ico-cart
+                      span Buy now <span>$9.95</span>
+                  .ui-checkbox
+                    input(type='checkbox' name="agree" id="agree" value="yes")
+                    label(for='agree') I agree with <a href='#termsModal' class="popup-with-zoom-anim">Terms and conditions</a>     
                     
+                               
         // FEATURES
         .features#sectionFeatures
           .container

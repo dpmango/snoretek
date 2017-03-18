@@ -112,9 +112,12 @@ $(document).ready(function(){
 
     // paste  value
     $(this).closest('.ui-select').find('input[type="hidden"]').val(currentValue);
+
+    // Trigger form change
+    $('.shop__form').trigger('change');
   });
 
-  $(document).mouseup(function (e) {
+  $(document).click(function (e) {
     var container = new Array();
     container.push($('.ui-select'));
     $.each(container, function(key, value) {
@@ -138,6 +141,251 @@ $(document).ready(function(){
         items: 2,
       }
     }
+  });
+
+  ////////////
+  // FORM LOGIC
+  ////////////
+  var form,
+      firstName,
+      lastName,
+      phone,
+      email,
+      state,
+      city,
+      zip,
+      street,
+      creditCard,
+      month,
+      year,
+      cvc,
+      agreed,
+      firstNameValid,
+      lastNameValid,
+      phoneValid,
+      emailValid,
+      stateValid,
+      cityValid,
+      zipValid,
+      streetValid,
+      creditCardValid,
+      monthValid,
+      yearValid,
+      cvcValid,
+      agreedValid
+  var activeStage = 1;
+
+  function collectVars(){
+    form = $('.shop__form');
+    firstName = form.find('input[name=first-name]');
+    lastName = form.find('input[name=last-name]');
+    phone = form.find('input[name=phone]');
+    email = form.find('input[name=email]');
+
+    state = form.find('input[name=state]');
+    city = form.find('input[name=city]');
+    zip = form.find('input[name=zip]');
+    street = form.find('input[name=street]');
+
+    creditCard = form.find('input[name=credit-card]');
+    month = form.find('input[name=month]');
+    year = form.find('input[name=year]');
+    cvc = form.find('input[name=cvc]');
+
+    agreed = form.find('input[name=agree]:checked');
+  }
+
+  function validateForm(){
+    // email validation
+    var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var emailIsValid = false;
+    var emailIsNotValid = true;
+    if(emailRegex.test(email.val())){
+      emailIsValid = true;
+      emailIsNotValid = false;
+    } else {
+      emailIsValid = false;
+      emailIsNotValid = true;
+    }
+
+    if(firstName.val() == '' || firstName.val().length <= 3){
+        firstName.addClass('ui-input--error');
+        firstNameValid = false;
+        return false;
+    } else {
+        firstNameValid = true;
+        firstName.removeClass('ui-input--error');
+    }
+    if(lastName.val() == '' || lastName.val().length <= 3){
+        lastName.addClass('ui-input--error');
+        lastNameValid = false;
+        return false;
+    } else {
+        lastNameValid = true;
+        lastName.removeClass('ui-input--error');
+    }
+    if(emailIsNotValid){
+        email.addClass('ui-input--error');
+        emailValid = false;
+        return false;
+    } else {
+        emailValid = true;
+        email.removeClass('ui-input--error');
+    }
+    if(phone.val() == '' || phone.val().length <= 10){
+        phone.addClass('ui-input--error');
+        phoneValid = false;
+        return false;
+    } else {
+        phoneValid = true;
+        phone.removeClass('ui-input--error');
+    }
+
+    if (activeStage >= 2) {
+      if(state.val() == ''){
+          state.addClass('ui-input--error');
+          stateValid = false;
+          return false;
+      } else {
+          stateValid = true;
+          state.removeClass('ui-input--error');
+      }
+      if(city.val() == '' || city.val().length <= 3){
+          city.addClass('ui-input--error');
+          cityValid = false;
+          return false;
+      } else {
+          cityValid = true;
+          city.removeClass('ui-input--error');
+      }
+      if(zip.val() == '' || zip.val().length <= 3){
+          zip.addClass('ui-input--error');
+          zipValid = false;
+          return false;
+      } else {
+          zipValid = true;
+          zip.removeClass('ui-input--error');
+      }
+      if(street.val() == '' || street.val().length <= 3){
+          street.addClass('ui-input--error');
+          streetValid = false;
+          return false;
+      } else {
+          streetValid = true;
+          street.removeClass('ui-input--error');
+      }
+    }
+    if (activeStage >= 3) {
+      if(creditCard.val().length < 12){
+          creditCard.addClass('ui-input--error');
+          creditCardValid = false;
+          return false;
+      } else {
+          creditCardValid = true;
+          creditCard.removeClass('ui-input--error');
+      }
+      if(month.val().length == ''){
+          month.addClass('ui-input--error');
+          monthValid = false;
+          return false;
+      } else {
+          monthValid = true;
+          month.removeClass('ui-input--error');
+      }
+      if(year.val().length == ''){
+          year.addClass('ui-input--error');
+          yearValid = false;
+          return false;
+      } else {
+          yearValid = true;
+          year.removeClass('ui-input--error');
+      }
+      if(cvc.val().length < 3){
+          cvc.addClass('ui-input--error');
+          cvcValid = false;
+          return false;
+      } else {
+          cvcValid = true;
+          cvc.removeClass('ui-input--error');
+      }
+
+      if(agreed.val() != 'yes'){
+          agreed.addClass('ui-checkbox--error');
+          agreedValid = false;
+          return false;
+      } else {
+          agreedValid = true;
+          agreed.removeClass('ui-checkbox--error');
+      }
+    }
+    return true;
+  }
+
+  function showStages(){
+    if ( firstNameValid && firstNameValid && (emailValid || phoneValid) ){
+      activeStage = 2;
+      $('#formShipping').addClass('show');
+      $('#formShipping').fadeIn();
+
+    }
+    if (stateValid && cityValid && zipValid && streetValid ){
+      activeStage = 3;
+      $('#formPayment').addClass('show');
+      $('#formPayment').fadeIn();
+    }
+  }
+  // event listeners
+  $('.shop__form').on('change', function(){
+    collectVars();
+    validateForm();
+    showStages();
+
+  });
+
+  $('.shop__form__cta .btn').on('click', function(e){
+    collectVars();
+
+    if( !validateForm() ) {
+      return false;
+      e.stopPropagation();
+    } else {
+      //build message data
+      var formData = {
+        'firstName' : firstName,
+        'lastName' : lastName,
+        'phone' : phone,
+        'email' : email,
+        'state' : state,
+        'city' : city,
+        'zip' : zip,
+        'street' : street,
+        'creditCard' : creditCard,
+        'month' : month,
+        'year' : year,
+        'cvc' : cvc
+      };
+
+      // and make ajax call to phpmail
+      $.ajax({
+        type        : 'POST',
+        url         : 'php/contact.php',
+        data        : formData,
+        dataType    : 'json',
+        encode      : true
+      }).done(function(data) {
+        if ( data.success) {
+          form.find('.form__title').fadeOut();
+          form.find('.form__wrapper').fadeOut();
+          form.find('.form__thanks').fadeIn();
+        }
+      }).fail(function(data) {
+        // remove
+        console.log(data);
+      });
+    }
+
+    e.preventDefault();
+
   });
 
   // Magnific Popup
@@ -165,6 +413,21 @@ $(document).ready(function(){
     mainClass: 'my-mfp-slide-bottom'
   });
 
+  $('.image-popup-no-margins').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false,
+		fixedContentPos: true,
+		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+		image: {
+			verticalFit: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300 // don't foget to change the duration also in CSS
+		}
+	});
+
   $('.popup-gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -182,7 +445,7 @@ $(document).ready(function(){
 
   // Masked input
   $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-  $("input[name='phone']").mask("9 (999) 999-9999");
+  $("input[name='phone']").mask("(999) 999-9999");
   $("#tin").mask("99-9999999");
   $("#ssn").mask("999-99-9999");
 

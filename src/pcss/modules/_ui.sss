@@ -17,6 +17,8 @@
   &--card
     background: white url('../images/sprite/credit-card-logos.png') no-repeat 95% center
     background-size: 112px 20px
+  &--error
+    border-color: $colorRed
 
 
 
@@ -93,3 +95,51 @@
       padding-left: 12px
   .ui-select
     font-size: 14px
+
+
+// RADIO
+.ui-checkbox
+  position: relative
+  cursor: pointer
+  margin-top: 15px
+  font-size: 13px
+  &--error
+    input
+      + label
+        &::before
+          box-shadow: inset 0px 0px 0 8px white, 0 0 0 1px $colorRed
+  input
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    overflow: hidden
+
+    + label
+      display: inline-block
+      padding-left: 25px
+      font-size: 14px
+      color: #939999
+      cursor: pointer
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 0
+        left: 0
+        size: 16px
+        background: $colorGreen
+        border-radius: 50%
+        box-shadow: inset 0px 0px 0 8px white, 0 0 0 1px $borderColor
+        transition: all .3s ease
+
+      a
+        color: $colorGreen
+        text-decoration: none
+
+  input:checked
+    + label
+      &::before
+        box-shadow: inset 0px 0px 0 3px white, 0 0 0 1px $borderColor

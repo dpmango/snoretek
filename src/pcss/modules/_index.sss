@@ -91,6 +91,10 @@
   &__title
     font-size: 32px
     font-family: 'Montserrat'
+    font-weight: 700
+    text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee,
+                  2px 1px 1px #ccc, 1px 2px 1px #eee,
+                  3px 2px 1px #ccc, 2px 3px 1px #eee
     margin-bottom: 20px
 
   &__product
@@ -101,7 +105,7 @@
       padding-bottom: 10px
       &__tab
         position: relative
-        flex: 0 1 28%
+        flex: 0 1 30%
         &::after
           display: block
           content: ' '
@@ -116,21 +120,27 @@
           display: block
           position: relative
           overflow: hidden
-          padding: 15px 10px
+          padding: 10px 10px
           font-size: 15px
+          text-shadow: 1px 1px 3px $fontColor
           background: $lightColor
           border-radius: 8px
           text-align: center
           font-family: 'Montserrat'
           font-weight: 400
           color: white
+          transition: all .3s ease
           &::before
             display: block
             content: ' '
             position: absolute 0 0 0 0
             z-index: 2
-            background: color(black a(40%))
+            background: color(black a(30%))
             transition: all .3s ease
+          &:hover
+            box-shadow: 0 2px 8px color(black a(20%))
+            &::before
+              background: color(black a(40%))
         img
           position: absolute
           left: 0
@@ -158,18 +168,46 @@
         display: block
 
     &__image
+      position: relative
       background: $lightColor
       padding: 10px
       border-radius: 6px
       display: inline-block
       margin-left: auto
       margin-right: auto
+      &::after
+        display: block
+        content: ' '
+        position: absolute 10px 10px 10px 10px
+        border-radius: 8px
+        z-index: 1
+        background: color($colorBlue a(35%)) svg-load('../../images/svg/zoom-in.svg', fill=#fff) no-repeat right bottom
+        background-size: 25px
+        opacity: 0
+        transition: all .3s ease
+      &:hover
+        &::after
+          opacity: 1
+          background-position: center
+
       img
         max-width: 100%
+        border-radius: 8px
+        display: block
+
     &__title
-      margin-top: 20px
+      margin-bottom: 20px
       font-size: 26px
       font-family: 'Montserrat'
+      font-weight: 700
+      color: $colorBlue
+      &::after
+        display: block
+        content: ' '
+        margin-top: 5px
+        width: 30px
+        height: 2px
+        background: $colorBlue
 
   &__form
     background: #F3F3F3
@@ -178,6 +216,7 @@
     margin-left: auto
     width: 400px
     padding: 25px 30px
+    box-shadow: 0 20px 15px -10px color(black a(20%))
     &__title
       font-family: 'Montserrat'
       font-size: 18px
@@ -197,6 +236,19 @@
       text-align: center
       margin-top: 20px
 
+#formPayment, #formShipping
+  height: 40px
+  overflow: hidden
+  position: relative
+  &::after
+    display: block
+    content: ' '
+    position: absolute 0 0 0 0
+    background: linear-gradient(to bottom, color(white a(40%)), color(white a(100%)) )
+  &.show
+    height: auto
+    &::after
+      display: none
 
 @media($desktop)
   .shop

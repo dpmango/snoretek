@@ -23,7 +23,7 @@
       <!-- HEADER-->
       <header class="header">
         <div class="container">
-          <div class="row row--alignCenter row--jcsb">
+          <div class="row row--condenced row--alignCenter row--jcsb">
             <div class="header__logo"><img src="images/logo-white.png"></div>
             <div class="header__menu"><a href="#sectionFeatures">Features</a><a href="#sectionHowItWorks">How it works</a><a href="#sectionTestimonials">Testimonials</a><a href="#sectionAbout">About</a><a href="#sectionFaq">FAQ</a><a class="btn btn--primary" href="#sectionShop">Buy Now</a></div>
             <button class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
@@ -47,18 +47,31 @@
                   <div class="shop__product__tabs-content">
                     <!-- next prodcut-->
                     <div class="shop__product__tab active" data-product="1">
-                      <div class="shop__product__image"><img src="images/product1.jpg"></div>
-                      <div class="shop__product__title">Mouthpiece for snoring</div>
+                      <div class="shop__product__title">Mouthpiece for snoring</div><a class="shop__product__image image-popup-no-margins" href="images/product1.jpg"><img src="images/product1.jpg"></a>
                       <div class="shop__product__description">
                         <p>The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and forward. This prevents the tongue from dropping back over the airway during sleep, which is the cause of snoring. </p>
-                        <p>90 Day Risk Free Return Policy!</p>
+                        <p> <b>90 Day Risk Free Return Policy!</b></p>
                         <You>must be able to breathe freely through your nose for these applications to have benefit.</You>
                       </div>
                     </div>
                     <!-- next prodcut-->
-                    <div class="shop__product__tab active" data-product="2"></div>
+                    <div class="shop__product__tab" data-product="2">
+                      <div class="shop__product__title">Chin strap for snoring</div><a class="shop__product__image image-popup-no-margins" href="images/product1.jpg"><img src="images/product1.jpg"></a>
+                      <div class="shop__product__description">
+                        <p>The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and forward. This prevents the tongue from dropping back over the airway during sleep, which is the cause of snoring. </p>
+                        <p> <b>90 Day Risk Free Return Policy!</b></p>
+                        <You>must be able to breathe freely through your nose for these applications to have benefit.</You>
+                      </div>
+                    </div>
                     <!-- next prodcut-->
-                    <div class="shop__product__tab active" data-product="3"> </div>
+                    <div class="shop__product__tab" data-product="3"> 
+                      <div class="shop__product__title">Combo pack 2 in 1</div><a class="shop__product__image image-popup-no-margins" href="images/product3.jpg"><img src="images/product3.jpg"></a>
+                      <div class="shop__product__description">
+                        <p>The SnoreTek Anti Snoring Chin Strap is a soft comfortable adjustable fabric band which helps keep the mouth closed and forward. This prevents the tongue from dropping back over the airway during sleep, which is the cause of snoring. </p>
+                        <p> <b>90 Day Risk Free Return Policy!</b></p>
+                        <You>must be able to breathe freely through your nose for these applications to have benefit.</You>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -68,70 +81,80 @@
                   <div class="shop__form__section">
                     <div class="row">
                       <div class="col col--3-6">
-                        <input class="ui-input" type="text" placeholder="First name">
+                        <input class="ui-input" type="text" name="first-name" placeholder="First name">
                       </div>
                       <div class="col col--3-6">
-                        <input class="ui-input" type="text" placeholder="Last name">
+                        <input class="ui-input" type="text" name="last-name" placeholder="Last name">
                       </div>
                     </div>
-                    <input class="ui-input" type="email" placeholder="Email">
-                    <input class="ui-input" type="tel" placeholder="Phone number">
+                    <input class="ui-input" type="email" name="email" placeholder="Email">
+                    <input class="ui-input" type="tel" name="phone" placeholder="Phone number">
                   </div>
                   <!-- NEXT SECTION-->
                   <div class="shop__form__section">
-                    <div class="shop__form__title shop__form__title--section">Shipping details</div>
-                    <div class="ui-select">
-                      <label>Select your state</label>
-                      <div class="ui-select__drop"><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span></div>
-                      <!-- selected value will be passed to this input -->
-                      <input type="hidden" name="state" value="">
-                    </div>
-                    <div class="row">
-                      <div class="col col--4-6">
-                        <input class="ui-input" type="text" placeholder="City">
+                    <div class="shop__form__title shop__form__title--section">2. Shipping details</div>
+                    <div id="formShipping">
+                      <div class="ui-select">
+                        <label>Select your state</label>
+                        <div class="ui-select__drop"><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span><span data-select="State name">State name</span></div>
+                        <!-- selected value will be passed to this input -->
+                        <input type="hidden" name="state" value="">
                       </div>
-                      <div class="col col--2-6">
-                        <input class="ui-input" type="text" placeholder="ZIP">
+                      <div class="row">
+                        <div class="col col--4-6">
+                          <input class="ui-input" type="text" name="city" placeholder="City">
+                        </div>
+                        <div class="col col--2-6">
+                          <input class="ui-input" type="text" name="zip" placeholder="ZIP">
+                        </div>
                       </div>
+                      <input class="ui-input" type="text" name="street" placeholder="Street addres">
                     </div>
-                    <input class="ui-input" type="text" placeholder="Street addres">
                   </div>
                   <!-- NEXT SECTION-->
                   <div class="shop__form__section">
-                    <div class="shop__form__title shop__form__title--section">Payment details</div>
-                    <input class="ui-input ui-input--card" type="text" name="credit-card" placeholder="Credit card number">
-                    <div class="row">
-                      <div class="col col--4-6">
-                        <div class="ui-labeled">
-                          <label>Expiration</label>
-                          <div class="row">
-                            <div class="col col--4-6">
-                              <div class="ui-select">
-                                <label>MM</label>
-                                <div class="ui-select__drop"><span data-select="January (01)">January (01)</span><span data-select="February (02)">February (02)</span><span data-select="March (03)">March (03)</span><span data-select="April (04)">April (04)</span><span data-select="May (05)">May (05)</span><span data-select="June (06)">June (06)</span><span data-select="July (07)">July (07)</span><span data-select="August (08)">August (08)</span><span data-select="September (09)">September (09)</span><span data-select="October (10)">October (10)</span><span data-select="November (11)">November (11)</span><span data-select="December (12)">December (12)</span></div>
+                    <div class="shop__form__title shop__form__title--section">3. Payment details</div>
+                    <div id="formPayment">
+                      <input class="ui-input ui-input--card" type="text" name="credit-card" placeholder="Credit card number">
+                      <div class="row">
+                        <div class="col col--4-6">
+                          <div class="ui-labeled">
+                            <label>Expiration</label>
+                            <div class="row">
+                              <div class="col col--4-6">
+                                <div class="ui-select">
+                                  <label>MM</label>
+                                  <div class="ui-select__drop"><span data-select="January (01)">January (01)</span><span data-select="February (02)">February (02)</span><span data-select="March (03)">March (03)</span><span data-select="April (04)">April (04)</span><span data-select="May (05)">May (05)</span><span data-select="June (06)">June (06)</span><span data-select="July (07)">July (07)</span><span data-select="August (08)">August (08)</span><span data-select="September (09)">September (09)</span><span data-select="October (10)">October (10)</span><span data-select="November (11)">November (11)</span><span data-select="December (12)">December (12)</span></div>
+                                  <!-- selected value will be passed to this input -->
+                                  <input type="hidden" name="month" value="">
+                                </div>
                               </div>
-                            </div>
-                            <div class="col col--2-4">
-                              <div class="ui-select">
-                                <label>YYYY</label>
-                                <div class="ui-select__drop"><span data-select="2017">2017</span><span data-select="2018">2018</span><span data-select="2019">2019</span><span data-select="2020">2020</span><span data-select="2021">2021</span></div>
+                              <div class="col col--2-4">
+                                <div class="ui-select">
+                                  <label>YYYY</label>
+                                  <div class="ui-select__drop"><span data-select="2017">2017</span><span data-select="2018">2018</span><span data-select="2019">2019</span><span data-select="2020">2020</span><span data-select="2021">2021</span></div>
+                                  <!-- selected value will be passed to this input -->
+                                  <input type="hidden" name="year" value="">
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col col--2-6">
-                        <div class="ui-labeled">
-                          <label>CVC</label>
-                          <input class="ui-input" type="text" name="cvc" placeholder="XXX">
+                        <div class="col col--2-6">
+                          <div class="ui-labeled">
+                            <label>CVC</label>
+                            <input class="ui-input" type="text" name="cvc" placeholder="XXX">
+                          </div>
                         </div>
-                        <!-- selected value will be passed to this input -->
-                        <input type="hidden" name="state" value="">
                       </div>
                     </div>
                   </div>
                   <div class="shop__form__cta">
-                    <button class="btn btn--cta" type="submit"><span>Pay <span>$9.95</span></span></button>
+                    <button class="btn btn--cta btn--disabled" type="submit"><i class="ico ico-cart"></i><span>Buy now <span>$9.95</span></span></button>
+                  </div>
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="agree" id="agree" value="yes">
+                    <label for="agree">I agree with <a href='#termsModal' class="popup-with-zoom-anim">Terms and conditions</a>     </label>
                   </div>
                 </form>
               </div>
@@ -410,8 +433,8 @@
       <div class="container">
         <div class="row row--alignCenter">
           <div class="col col--4-6">
-            <div class="footer__text">Company name is an first supplier of very best products across the world</div>
-            <div class="footer__copywrite"><span>All rights reserved 2017 @ Company Name</span><a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a></div>
+            <div class="footer__text">SnoreTek name is a supplier of snoring solutions</div>
+            <div class="footer__copywrite"><span>All rights reserved 2017 @ Company Name</span><a class="popup-with-zoom-anim" href="#termsModal">Terms & Conditions</a><a class="popup-with-zoom-anim" href="#privacyModal">Privacy Policy</a></div>
           </div>
           <div class="col col--2-6">
             <div class="footer__socials"><a href="#"><i class="ico ico-fb"></i></a><a href="#"><i class="ico ico-tw"></i></a><a href="#"><i class="ico ico-google"></i></a><a href="#"><i class="ico ico-insta"></i></a></div>
@@ -419,6 +442,170 @@
         </div>
       </div>
     </footer>
+    <div class="zoom-anim-dialog mfp-hide" id="termsModal">
+      <h2>TEMPLATE WEBSITE TERMS AND CONDITIONS</h2>
+      <p>This document was created using a Contractology template available at <a href="http://www.contractology.com">http://www.contractology.com</a>.</p>
+      <p></p>
+      <p><strong>Introduction</strong></p>
+      <p></p>
+      <p>These terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full.   If you disagree with these terms and conditions or any part of these terms and conditions, you must not use this website.</p>
+      <p></p>
+      <p>[You must be at least [18] years of age to use this website.  By using this website [and by agreeing to these terms and conditions] you warrant and represent that you are at least [18] years of age.]</p>
+      <p></p>
+      <p>[This website uses cookies.  By using this website and agreeing to these terms and conditions, you consent to our [NAME]'s use of cookies in accordance with the terms of [NAME]'s [privacy policy / cookies policy].]</p>
+      <p></p>
+      <p><strong>License to use website</strong></p>
+      <p></p>
+      <p>Unless otherwise stated, [NAME] and/or its licensors own the intellectual property rights in the website and material on the website.  Subject to the license below, all these intellectual property rights are reserved.</p>
+      <p></p>
+      <p>You may view, download for caching purposes only, and print pages [or [OTHER CONTENT]] from the website for your own personal use, subject to the restrictions set out below and elsewhere in these terms and conditions.</p>
+      <p></p>
+      <p>You must not:</p>
+      <p></p>
+      <p style="margin-left:36.0pt;">·       republish material from this website (including republication on another website);</p>
+      <p style="margin-left:36.0pt;">·       sell, rent or sub-license material from the website;</p>
+      <p style="margin-left:36.0pt;">·       show any material from the website in public;</p>
+      <p style="margin-left:36.0pt;">·       reproduce, duplicate, copy or otherwise exploit material on this website for a commercial purpose;]</p>
+      <p style="margin-left:36.0pt;">·       [edit or otherwise modify any material on the website; or]</p>
+      <p style="margin-left:36.0pt;">·       [redistribute material from this website [except for content specifically and expressly made available for redistribution].]</p>
+      <p></p>
+      <p>[Where content is specifically made available for redistribution, it may only be redistributed [within your organisation].]</p>
+      <p></p>
+      <p><strong>Acceptable use</strong></p>
+      <p></p>
+      <p>You must not use this website in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website; or in any way which is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity.</p>
+      <p></p>
+      <p>You must not use this website to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software.</p>
+      <p></p>
+      <p>You must not conduct any systematic or automated data collection activities (including without limitation scraping, data mining, data extraction and data harvesting) on or in relation to this website without [NAME'S] express written consent.</p>
+      <p></p>
+      <p>[You must not use this website to transmit or send unsolicited commercial communications.]</p>
+      <p></p>
+      <p>[You must not use this website for any purposes related to marketing without [NAME'S] express written consent.]</p>
+      <p></p>
+      <p><strong>[Restricted access</strong></p>
+      <p></p>
+      <p>[Access to certain areas of this website is restricted.]  [NAME] reserves the right to restrict access to [other] areas of this website, or indeed this entire website, at [NAME'S] discretion.</p>
+      <p></p>
+      <p>If [NAME] provides you with a user ID and password to enable you to access restricted areas of this website or other content or services, you must ensure that the user ID and password are kept confidential.</p>
+      <p></p>
+      <p>[[NAME] may disable your user ID and password in [NAME'S] sole discretion without notice or explanation.]</p>
+      <p></p>
+      <p><strong>[User content</strong></p>
+      <p></p>
+      <p>In these terms and conditions, “your user content” means material (including without limitation text, images, audio material, video material and audio-visual material) that you submit to this website, for whatever purpose.</p>
+      <p></p>
+      <p>You grant to [NAME] a worldwide, irrevocable, non-exclusive, royalty-free license to use, reproduce, adapt, publish, translate and distribute your user content in any existing or future media.  You also grant to [NAME] the right to sub-license these rights, and the right to bring an action for infringement of these rights.</p>
+      <p></p>
+      <p>Your user content must not be illegal or unlawful, must not infringe any third party's legal rights, and must not be capable of giving rise to legal action whether against you or [NAME] or a third party (in each case under any applicable law).</p>
+      <p></p>
+      <p>You must not submit any user content to the website that is or has ever been the subject of any threatened or actual legal proceedings or other similar complaint.</p>
+      <p></p>
+      <p>[NAME] reserves the right to edit or remove any material submitted to this website, or stored on [NAME'S] servers, or hosted or published upon this website.</p>
+      <p></p>
+      <p>[Notwithstanding [NAME'S] rights under these terms and conditions in relation to user content, [NAME] does not undertake to monitor the submission of such content to, or the publication of such content on, this website.]</p>
+      <p></p>
+      <p><strong>No warranties</strong></p>
+      <p align="center"></p>
+      <p>This website is provided “as is” without any representations or warranties, express or implied.  [NAME] makes no representations or warranties in relation to this website or the information and materials provided on this website.</p>
+      <p></p>
+      <p>Without prejudice to the generality of the foregoing paragraph, [NAME] does not warrant that:</p>
+      <p></p>
+      <p style="margin-left:36.0pt;">l  this website will be constantly available, or available at all; or</p>
+      <p style="margin-left:36.0pt;">l  the information on this website is complete, true, accurate or non-misleading.</p>
+      <p></p>
+      <p>Nothing on this website constitutes, or is meant to constitute, advice of any kind.  [If you require advice in relation to any [legal, financial or medical] matter you should consult an appropriate professional.]</p>
+      <p></p>
+      <p><strong>Limitations of liability</strong></p>
+      <p></p>
+      <p>[NAME] will not be liable to you (whether under the law of contact, the law of torts or otherwise) in relation to the contents of, or use of, or otherwise in connection with, this website:</p>
+      <p></p>
+      <p style="margin-left:36.0pt;">l  [to the extent that the website is provided free-of-charge, for any direct loss;]</p>
+      <p style="margin-left:36.0pt;">l  for any indirect, special or consequential loss; or</p>
+      <p style="margin-left:36.0pt;">l  for any business losses, loss of revenue, income, profits or anticipated savings, loss of contracts or business relationships, loss of reputation or goodwill, or loss or corruption of information or data.</p>
+      <p></p>
+      <p>These limitations of liability apply even if [NAME] has been expressly advised of the potential loss.</p>
+      <p></p>
+      <p><strong>Exceptions</strong></p>
+      <p></p>
+      <p>Nothing in this website disclaimer will exclude or limit any warranty implied by law that it would be unlawful to exclude or limit; and nothing in this website disclaimer will exclude or limit [NAME'S] liability in respect of any:</p>
+      <p></p>
+      <p style="margin-left:36.0pt;">l  death or personal injury caused by [NAME'S] negligence;</p>
+      <p style="margin-left:36.0pt;">l  fraud or fraudulent misrepresentation on the part of [NAME]; or</p>
+      <p style="margin-left:36.0pt;">l  matter which it would be illegal or unlawful for [NAME] to exclude or limit, or to attempt or purport to exclude or limit, its liability.</p>
+      <p></p>
+      <p><strong>Reasonableness</strong></p>
+      <p></p>
+      <p>By using this website, you agree that the exclusions and limitations of liability set out in this website disclaimer are reasonable.</p>
+      <p></p>
+      <p>If you do not think they are reasonable, you must not use this website.</p>
+      <p></p>
+      <p><strong>Other parties</strong></p>
+      <p></p>
+      <p>[You accept that, as a limited liability entity, [NAME] has an interest in limiting the personal liability of its officers and employees.  You agree that you will not bring any claim personally against [NAME'S] officers or employees in respect of any losses you suffer in connection with the website.]</p>
+      <p></p>
+      <p>[Without prejudice to the foregoing paragraph,] you agree that the limitations of warranties and liability set out in this website disclaimer will protect [NAME'S] officers, employees, agents, subsidiaries, successors, assigns and sub-contractors as well as [NAME].</p>
+      <p></p>
+      <p><strong>Unenforceable provisions</strong></p>
+      <p></p>
+      <p>If any provision of this website disclaimer is, or is found to be, unenforceable under applicable law, that will not affect the enforceability of the other provisions of this website disclaimer.</p>
+      <p></p>
+      <p><strong>Indemnity</strong></p>
+      <p></p>
+      <p>You hereby indemnify [NAME] and undertake to keep [NAME] indemnified against any losses, damages, costs, liabilities and expenses (including without limitation legal expenses and any amounts paid by [NAME] to a third party in settlement of a claim or dispute on the advice of [NAME'S] legal advisers) incurred or suffered by [NAME] arising out of any breach by you of any provision of these terms and conditions[, or arising out of any claim that you have breached any provision of these terms and conditions].</p>
+      <p></p>
+      <p><strong>Breaches of these terms and conditions</strong></p>
+      <p></p>
+      <p>Without prejudice to [NAME'S] other rights under these terms and conditions, if you breach these terms and conditions in any way, [NAME] may take such action as [NAME] deems appropriate to deal with the breach, including suspending your access to the website, prohibiting you from accessing the website, blocking computers using your IP address from accessing the website, contacting your internet service provider to request that they block your access to the website and/or bringing court proceedings against you.</p>
+      <p></p>
+      <p><strong>Variation</strong></p>
+      <p></p>
+      <p>[NAME] may revise these terms and conditions from time-to-time.  Revised terms and conditions will apply to the use of this website from the date of the publication of the revised terms and conditions on this website.  Please check this page regularly to ensure you are familiar with the current version.</p>
+      <p></p>
+      <p><strong>Assignment</strong></p>
+      <p></p>
+      <p>[NAME] may transfer, sub-contract or otherwise deal with [NAME'S] rights and/or obligations under these terms and conditions without notifying you or obtaining your consent.</p>
+      <p></p>
+      <p>You may not transfer, sub-contract or otherwise deal with your rights and/or obligations under these terms and conditions.</p>
+      <p></p>
+      <p><strong>Severability</strong></p>
+      <p></p>
+      <p>If a provision of these terms and conditions is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect.  If any unlawful and/or unenforceable provision would be lawful or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of the provision will continue in effect.</p>
+      <p></p>
+      <p><strong>Entire agreement</strong></p>
+      <p></p>
+      <p>These terms and conditions [, together with [DOCUMENTS],] constitute the entire agreement between you and [NAME] in relation to your use of this website, and supersede all previous agreements in respect of your use of this website.</p>
+      <p></p>
+      <p><strong>Law and jurisdiction</strong></p>
+      <p></p>
+      <p>These terms and conditions will be governed by and construed in accordance with [GOVERNING LAW], and any disputes relating to these terms and conditions will be subject to the [non-]exclusive jurisdiction of the courts of [JURISDICTION].</p>
+      <p></p>
+      <p><strong>[Registrations and authorisations</strong></p>
+      <p></p>
+      <p>[[NAME] is registered with [TRADE REGISTER].  You can find the online version of the register at [URL].  [NAME'S] registration number is [NUMBER].]</p>
+      <p></p>
+      <p>[[NAME] is subject to [AUTHORISATION SCHEME], which is supervised by [SUPERVISORY AUTHORITY].]</p>
+      <p></p>
+      <p>[[NAME] is registered with [PROFESSIONAL BODY].  [NAME'S] professional title is [TITLE] and it has been granted in the United Kingdom.  [NAME] is subject to the [RULES] which can be found at [URL].]</p>
+      <p></p>
+      <p>[[NAME] subscribes to the following code[s] of conduct: [CODE(S) OF CONDUCT].  [These codes/this code] can be consulted electronically at [URL(S)].</p>
+      <p></p>
+      <p>[[NAME'S] [TAX] number is [NUMBER].]]</p>
+      <p></p>
+      <p><strong>[NAME'S] details</strong></p>
+      <p></p>
+      <p>The full name of [NAME] is [FULL NAME].</p>
+      <p></p>
+      <p>[[NAME] is registered in [JURISDICTION] under registration number [NUMBER].]</p>
+      <p></p>
+      <p>[NAME'S] [registered] address is [ADDRESS].</p>
+      <p></p>
+      <p>You can contact [NAME] by email to [EMAIL].</p>
+    </div>
+    <div class="zoom-anim-dialog mfp-hide" id="privacyModal">
+      <h2>TEMPLATE WEBSITE TERMS AND CONDITIONS</h2>
+      <p>Content here</p>
+    </div>
     <!-- SCRIPTS-->
     <!--build:js js/scripts.min.js-->
     <script src="components/jquery/dist/jquery.min.js"></script>
