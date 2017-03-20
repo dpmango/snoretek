@@ -77,6 +77,14 @@ $(document).ready(function(){
     });
   });
 
+  $('.mobile-menu__menu a').on('click', function(){
+    setTimeout(function(){
+      $('.hamburger').removeClass('is-active');
+      $('.mobile-menu').removeClass('is-active');
+      $('.page').removeClass('is-active');
+    }, 800);
+  });
+
   // PRODUCT TABS
   var selectedTab, price;
   $('.shop__product__tabs-nav__tab').on('click', function(){
@@ -187,6 +195,12 @@ $(document).ready(function(){
       cvcValid,
       agreedValid
   var activeStage = 1;
+
+  $('#formPayment, #formShipping').on('click', function(e){
+    if ($(this).is(':not("show")')){
+      $('.shop__form').trigger('change');
+    }
+  });
 
   function collectVars(){
     form = $('.shop__form');
