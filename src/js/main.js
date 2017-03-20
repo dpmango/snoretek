@@ -464,5 +464,8 @@ $(document).ready(function(){
 
   $('input[name="cvc"]').mask("999");
   $('input[name="credit-card"]').mask("9999 9999 9999 9999");
+  $('input[name="year"]').mask("9999");
+  $('input[name="month"]').mask("99");
+
 
 });

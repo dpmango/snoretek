@@ -137,41 +137,43 @@ html
                   .shop__form__section
                     .shop__form__title.shop__form__title--section 3. Payment details
                     #formPayment
-                      input(type="number" name="credit-card" placeholder="Credit card number").ui-input.ui-input--card
+                      input(type="text" name="credit-card" placeholder="Credit card number").ui-input.ui-input--card
                       .row
                         .col.col--4-6
                           .ui-labeled
                             label Expiration
                             .row
                               .col.col--4-6
-                                .ui-select
-                                  label MM
-                                  .ui-select__drop
-                                    span(data-select='January (01)') January (01)
-                                    span(data-select='February (02)') February (02)
-                                    span(data-select='March (03)') March (03)
-                                    span(data-select='April (04)') April (04)
-                                    span(data-select='May (05)') May (05)
-                                    span(data-select='June (06)') June (06)
-                                    span(data-select='July (07)') July (07)
-                                    span(data-select='August (08)') August (08)
-                                    span(data-select='September (09)') September (09)
-                                    span(data-select='October (10)') October (10)
-                                    span(data-select='November (11)') November (11)
-                                    span(data-select='December (12)') December (12)
-                                  // selected value will be passed to this input 
-                                  input(type="hidden" name="month" value="")
+                                input(type="text" name="month" placeholder="MM").ui-input
+                                //- .ui-select
+                                //-   label MM
+                                //-   .ui-select__drop
+                                //-     span(data-select='January (01)') January (01)
+                                //-     span(data-select='February (02)') February (02)
+                                //-     span(data-select='March (03)') March (03)
+                                //-     span(data-select='April (04)') April (04)
+                                //-     span(data-select='May (05)') May (05)
+                                //-     span(data-select='June (06)') June (06)
+                                //-     span(data-select='July (07)') July (07)
+                                //-     span(data-select='August (08)') August (08)
+                                //-     span(data-select='September (09)') September (09)
+                                //-     span(data-select='October (10)') October (10)
+                                //-     span(data-select='November (11)') November (11)
+                                //-     span(data-select='December (12)') December (12)
+                                //-   // selected value will be passed to this input 
+                                //-   input(type="hidden" name="month" value="")
                               .col.col--2-4
-                                .ui-select
-                                  label YYYY
-                                  .ui-select__drop
-                                    span(data-select='2017') 2017
-                                    span(data-select='2018') 2018
-                                    span(data-select='2019') 2019
-                                    span(data-select='2020') 2020
-                                    span(data-select='2021') 2021
-                                  // selected value will be passed to this input 
-                                  input(type="hidden" name="year" value="")
+                                input(type="text" name="year" placeholder="YYYY").ui-input
+                                //- .ui-select
+                                //-   label YYYY
+                                //-   .ui-select__drop
+                                //-     span(data-select='2017') 2017
+                                //-     span(data-select='2018') 2018
+                                //-     span(data-select='2019') 2019
+                                //-     span(data-select='2020') 2020
+                                //-     span(data-select='2021') 2021
+                                //-   // selected value will be passed to this input 
+                                //-   input(type="hidden" name="year" value="")
                         .col.col--2-6
                           .ui-labeled
                             label CVC

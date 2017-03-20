@@ -118,27 +118,17 @@
                   <div class="shop__form__section">
                     <div class="shop__form__title shop__form__title--section">3. Payment details</div>
                     <div id="formPayment">
-                      <input class="ui-input ui-input--card" type="number" name="credit-card" placeholder="Credit card number">
+                      <input class="ui-input ui-input--card" type="text" name="credit-card" placeholder="Credit card number">
                       <div class="row">
                         <div class="col col--4-6">
                           <div class="ui-labeled">
                             <label>Expiration</label>
                             <div class="row">
                               <div class="col col--4-6">
-                                <div class="ui-select">
-                                  <label>MM</label>
-                                  <div class="ui-select__drop"><span data-select="January (01)">January (01)</span><span data-select="February (02)">February (02)</span><span data-select="March (03)">March (03)</span><span data-select="April (04)">April (04)</span><span data-select="May (05)">May (05)</span><span data-select="June (06)">June (06)</span><span data-select="July (07)">July (07)</span><span data-select="August (08)">August (08)</span><span data-select="September (09)">September (09)</span><span data-select="October (10)">October (10)</span><span data-select="November (11)">November (11)</span><span data-select="December (12)">December (12)</span></div>
-                                  <!-- selected value will be passed to this input -->
-                                  <input type="hidden" name="month" value="">
-                                </div>
+                                <input class="ui-input" type="text" name="month" placeholder="MM">
                               </div>
                               <div class="col col--2-4">
-                                <div class="ui-select">
-                                  <label>YYYY</label>
-                                  <div class="ui-select__drop"><span data-select="2017">2017</span><span data-select="2018">2018</span><span data-select="2019">2019</span><span data-select="2020">2020</span><span data-select="2021">2021</span></div>
-                                  <!-- selected value will be passed to this input -->
-                                  <input type="hidden" name="year" value="">
-                                </div>
+                                <input class="ui-input" type="text" name="year" placeholder="YYYY">
                               </div>
                             </div>
                           </div>
