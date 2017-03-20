@@ -91,7 +91,9 @@ html
   
               .col.col--3-6.col--auto--desktop.col--auto-m--tablet
                 form(action="#").shop__form
-                  .shop__form__title.shop__form__title--right Try it today <span> $ 28.95 </span>
+                  .shop__form__title
+                    | <span> $ 28.95 </span> Try it today 
+                    .shop__form__title__product Mouthpiece for snoring
                   .shop__form__section
                     .row
                       .col.col--3-6
@@ -131,7 +133,7 @@ html
                   .shop__form__section
                     .shop__form__title.shop__form__title--section 3. Payment details
                     #formPayment
-                      input(type="text" name="credit-card" placeholder="Credit card number").ui-input.ui-input--card
+                      input(type="number" name="credit-card" placeholder="Credit card number").ui-input.ui-input--card
                       .row
                         .col.col--4-6
                           .ui-labeled
@@ -178,7 +180,7 @@ html
                   .shop__form__cta
                     button(type="submit").btn.btn--cta.btn--disabled
                       i.ico.ico-cart
-                      span Buy now <span>$28.95</span>
+                      span Buy now
             
             .row
               .col.col--full
@@ -187,11 +189,7 @@ html
                     img(src="images/fda.png")
                   .shop__logos__image.shop__logos__image--90-days
                     img(src="images/90-days.png")
-                  .shop__logos__image.shop__logos__image--fda
-                    img(src="images/fda.png")
-                  .shop__logos__image.shop__logos__image--90-days
-                    img(src="images/90-days.png")
-                           
+
         // FEATURES
         .features#sectionFeatures
           .container
@@ -211,7 +209,7 @@ html
                     .features__block__icon
                       i.ico.ico-benefit-2
                     .features__block__content
-                      .features__title Prevents CPAP Bloating and Dry Mouth
+                      .features__title Prevents CPfAP Bloating and Dry Mouth
                     .features__description The SnoreTek by keeping the mouth closed, offers CPAP users a solution to the common stomach bloating problem caused from air being blown into the open mouth. 
                   .features__block
                     .features__block__icon
@@ -219,7 +217,13 @@ html
                     .features__block__content
                       .features__title Improves Snoring Mouthpiece Effectiveness
                     .features__description Snoring mouthpieces commonly fall out making them less effective. When worn while sleeping, the SnoreTek can prevent the mouthpiece from falling out and this helps stop snoring.
-              
+                  .features__block
+                    .features__block__icon
+                      i.ico.ico-benefit-4
+                    .features__block__content
+                      .features__title Easy to use and simple setup
+                    .features__description Fit this mouthpiece in 5 minutes, just like a sports mouth guard, and stop snoring tonight! It's not complicated. You will get restful sleep and will be able to enjoy sleeping with your partner again. 
+                
               .col.col--2-6
                 .features__image
                   img(src='images/pic.png')
@@ -480,14 +484,15 @@ html
                   //- If you want to refit the mouthpiece later, coat the inside portion of the airway plug with Vaseline before the fitting. You still must keep the airway plug fully seated.
                   //- Option Four
                   //- If none of the above is satisfactory, contact us for a replacement QNZ. Use the Vaseline as described above to prevent a recurrence of the issue.                            
-                  //-       
-                .faq__help
-                  .faq__help__title Need help ?
-                  .faq__help__subtitle Let us know
-                  a(href='#contactModal').btn.btn--outline.popup-with-zoom-anim Contact us
-                  .faq__help__contacts
-                    a(href="#mailto:info@snoretek.com") info@snoretek.com
-          
+                  //-     
+                    
+                //- .faq__help
+                //-   .faq__help__title Need help ?
+                //-   .faq__help__subtitle Let us know
+                //-   a(href='#contactModal').btn.btn--outline.popup-with-zoom-anim Contact us
+                //-   .faq__help__contacts
+                //-     a(href="#mailto:info@snoretek.com") info@snoretek.com
+                //- 
           // CTA
           .cta
             .container

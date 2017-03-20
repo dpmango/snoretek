@@ -36,4 +36,4 @@ __Production__
 
 
 ## Push command
-gulp build && git add . && git commit -m "form ui dropdown fix" && git push origin master && git subtree push --prefix dist origin gh-pages
+gulp build && git add . && git commit -m "some changes" && git push origin master && git subtree push --prefix dist origin gh-pages
