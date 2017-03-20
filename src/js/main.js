@@ -472,14 +472,14 @@ $(document).ready(function(){
 
   // Masked input
   $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-  $("input[name='phone']").mask("(999) 999-9999");
+  // $("input[name='phone']").mask("(999) 999-9999");
   $("#tin").mask("99-9999999");
   $("#ssn").mask("999-99-9999");
 
-  $('input[name="cvc"]').mask("999");
-  $('input[name="credit-card"]').mask("9999 9999 9999 9999");
-  $('input[name="year"]').mask("9999");
-  $('input[name="month"]').mask("99");
+  // $('input[name="cvc"]').mask("999");
+  // $('input[name="credit-card"]').mask("9999 9999 9999 9999");
+  // $('input[name="year"]').mask("9999");
+  // $('input[name="month"]').mask("99");
 
 
 });
