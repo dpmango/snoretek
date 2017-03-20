@@ -84,7 +84,7 @@ $(document).ready(function(){
     $(this).addClass('active');
 
     var productName = $(this).find('span').text();
-    $('.shop__form__title__product').text(productName);
+    $('.shop__form__title__product > span').text(productName);
 
     selectedTab = $(this).data('product');
 
@@ -95,7 +95,7 @@ $(document).ready(function(){
     } else if(selectedTab == 3){
       price = 63.95
     }
-    $('.shop__form__title span').text('$ ' + price + ' ');
+    $('.shop__form__title__price span').text('$ ' + price + ' ');
 
     $('.shop__product__tab').each(function(i, val){
       if (selectedTab == $(this).data('product')){
