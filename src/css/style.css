@@ -1077,6 +1077,49 @@ body, html {
 .shop {
     padding-top: 35px;
 }
+.shop .col--3-6 {
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+.shop__selector {
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #f46d36;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+}
+.shop--welcome {
+    min-height: 100vh;
+}
+.shop--welcome .col--3-6 {
+    -webkit-flex-basis: 70%;
+            flex-basis: 70%;
+    margin-top: 20vh;
+    margin-right: auto;
+    margin-left: auto;
+        -ms-flex-preferred-size: 70%;
+}
+.shop--welcome .shop__title {
+    text-align: center;
+}
+.shop--welcome .shop__selector {
+    display: block;
+}
+.shop--welcome .shop__product__tabs-nav__tab span {
+    font-size: 20px;
+}
+.shop--welcome .shop__logos {
+    display: none;
+}
+.shop--welcome .shop__product__tabs-content {
+    display: none;
+}
+.shop--welcome .col--auto-m--tablet {
+    display: none;
+}
 .shop__title {
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -1190,6 +1233,11 @@ body, html {
 }
 .shop__product__tabs-nav__tab.active:after, .shop__product__tabs-nav__tab.active:before {
     background: #f46d36;
+}
+.shop__product__tabs-nav__tab:hover {}
+.shop__product__tabs-nav__tab:hover:after, .shop__product__tabs-nav__tab:hover:before {
+    background: #3498db;
+    background: rgba(52, 152, 219, 0.75);
 }
 .shop__product__tabs-content {
     margin-top: 25px;

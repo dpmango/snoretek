@@ -93,6 +93,37 @@
 // SHOP
 .shop
   padding-top: 35px
+  &__selector
+    display: none
+    color: $colorOrange
+    text-transform: uppercase
+    text-align: center
+    margin-top: 15px
+    margin-bottom: 20px
+    font-weight: 700
+    font-size: 22px
+  .col--3-6
+    transition: all .4s ease
+  &--welcome
+    min-height: 100vh
+    .col--3-6
+      margin-left: auto
+      margin-right: auto
+      margin-top: 20vh
+      flex-basis: 70%
+    .shop__title
+      text-align: center
+    .shop__selector
+      display: block
+    .shop__product__tabs-nav__tab
+      span
+        font-size: 20px
+    .shop__logos
+      display: none
+    .shop__product__tabs-content
+      display: none
+    .col--auto-m--tablet
+      display: none
   &__title
     font-size: 30px
     font-family: 'Montserrat'
@@ -173,6 +204,9 @@
             background: $colorBlueLight
             &::before
               background: color($colorBlueLight a(50%))
+        &:hover
+          &::after, &::before
+            background: color($colorBlueLight a(75%))
 
     &__tabs-content
       margin-top: 25px

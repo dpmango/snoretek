@@ -91,6 +91,8 @@ $(document).ready(function(){
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
 
+    $('.shop').removeClass('shop--welcome');
+
     var productName = $(this).find('span').text();
     $('.shop__form__title__product > span').text(productName);
 
@@ -481,5 +483,23 @@ $(document).ready(function(){
   // $('input[name="year"]').mask("9999");
   // $('input[name="month"]').mask("99");
 
+  var numbersOnly = [];
+  numbersOnly.push( $('input[name="cvc"]') );
+  numbersOnly.push( $('input[name="credit-card"]') );
+  numbersOnly.push($('input[name="year"]') );
+  numbersOnly.push($('input[name="month"]') );
+
+  $.each(numbersOnly, function(i, val){
+    $(val).keydown(function (e) {
+      if ($.inArray(e.keyCode, [32, 189, 46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+          (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+          (e.keyCode >= 35 && e.keyCode <= 40)) {
+               return;
+      }
+      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+          e.preventDefault();
+      }
+    });
+  });
 
 });
