@@ -196,11 +196,11 @@ $(document).ready(function(){
       agreedValid
   var activeStage = 1;
 
-  $('#formPayment, #formShipping').on('click', function(e){
-    if ($(this).is(':not("show")')){
-      $('.shop__form').trigger('change');
-    }
-  });
+  // $('#formPayment, #formShipping').on('click', function(e){
+  //   if ($(this).is(':not("show")')){
+  //     $('.shop__form').trigger('change');
+  //   }
+  // });
 
   function collectVars(){
     form = $('.shop__form');
@@ -363,9 +363,9 @@ $(document).ready(function(){
   }
   // event listeners
   $('.shop__form').on('change', function(){
-    collectVars();
-    validateForm();
-    showStages();
+    // collectVars();
+    // validateForm();
+    // showStages();
 
   });
 
